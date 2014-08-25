@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": "/api/application/v1",
-        "applications": [
+        "item": [
             { "href": "/api/application/v1/12345", "title": "Blue Bouncing Balls" },
             { "href": "/api/application/v1/23456", "title": "Green Bouncing Balls" },
             { "href": "/api/application/v1/34567", "title": "Red Bouncing Balls" },

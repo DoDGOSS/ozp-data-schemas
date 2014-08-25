@@ -19,22 +19,22 @@
             "label": "Blue Ball"
         }
     ],
-
+    "icons" : {
+        "small": "http://localhost:15000/largeIcon.png",
+        "large": "http://localhost:15000/smallIcon.png"
+    },
+    "screenShots" : [
+        {
+            "href" : "http://localhost:15000/screenShot.png",
+            "title" : "A screenshot"
+        }
+    ],
+    "launchUrls" : {
+        "default": "http://localhost:15000/?color=blue",
+        "test" : "http://test.localhost:15000/?color=blue"
+    },
     "_links": {
         "self" : { "href": "/api/application/v1/12345"},
-        "launch" : [{ 
-            "href": "http://localhost:15000/?color=blue",
-            "name": "default"
-         }],
-         "icons" : [
-             {"name":"small", "href":"http://localhost:15000/largeIcon.png"},
-             {"name":"large", "href":"http://localhost:15000/smallIcon.png"}
-         ],
-        "screenShots" : [
-            {
-                "href" : "http://localhost:15000/screenShot.png",
-                "title" : "A screenshot"
-            }
-        ]
+        "describes" : { "href": "http://localhost:15000/?color=blue"}
     }
 }

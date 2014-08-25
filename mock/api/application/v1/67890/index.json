@@ -12,22 +12,22 @@
         "demo"
     ],
     "intents": [ ],
-
+    "icons" : {
+        "small": "http://localhost:13000/tools/debugger/smallIcon.png",
+        "large": "http://localhost:13000/tools/debugger/largeIcon.png"
+    },
+    "screenShots" : [
+        {
+            "href" : "http://localhost:13000/tools/debugger/screenShot.png",
+            "title" : "A screenshot"
+        }
+    ],
+    "launchUrls" : {
+        "default": "http://localhost:15004/",
+        "test" : "http://test.localhost:15004/"
+    },
     "_links": {
         "self" : { "href": "/api/application/v1/67890"},
-        "launch" : [{ 
-            "href": "http://localhost:13000/tools/debugger",
-            "name": "default"
-         }],
-         "icons" : [
-             {"name":"small", "href":"http://localhost:13000/tools/debugger/largeIcon.png"},
-             {"name":"large", "href":"http://localhost:13000/tools/debugger/smallIcon.png"}
-         ],
-        "screenShots" : [
-            {
-                "href" : "http://localhost:13000/tools/debugger/screenShot.png",
-                "title" : "A screenshot"
-            }
-        ]
+        "describes" : {"href":"http://localhost:13000/tools/debugger"}
     }
 }
