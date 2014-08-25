@@ -7,7 +7,7 @@
             "templated": true
         }],
         "item": [
-            {"href": "/api/data/v1/exampleUser/biggerData.json"},
+            {"href": "/api/data/v1/exampleUser/bigData.json"},
             {"href": "/api/data/v1/exampleUser/dashboards/12345"},
             {"href": "/api/data/v1/exampleUser/dashboards/23456"},
             {"href": "/api/data/v1/exampleUser/toolbars/12345"},
