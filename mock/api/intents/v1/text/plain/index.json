@@ -6,19 +6,19 @@
             "href": "/api/intents/v1/rels/{rel}",
             "templated": true
         }],
-        "ozp:intentActions" : [
+        "item" : [
             { "href": "/api/intents/v1/text/plain/view"},
             { "href": "/api/intents/v1/text/plain/edit"}
         ]
     },
     "_embedded": {
-        "actions": [{
+        "item": [{
             "type": "text/plain",
-            "action": "view",
+            "action": "share",
             "icon": "http://example.com/view-text-plain.png",
-            "label": "View as plain text",
+            "label": "Share plain text",
             "_links": {
-                "self" : "/api/intents/v1/text/plain/view"
+                "self" : {"href": "/api/intents/v1/text/plain/share"}
             }
         }]
     }

@@ -1,6 +1,6 @@
 {
     "_links": {
-        "self": "/api/application/v1",
+        "self": {"href":"/api/application/v1"},
         "item": [
             { "href": "/api/application/v1/12345", "title": "Blue Bouncing Balls" },
             { "href": "/api/application/v1/23456", "title": "Green Bouncing Balls" },
