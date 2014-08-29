@@ -9,7 +9,13 @@
             "description": "The user's chosen dashboard as the first dashboard they see as they login",
             "type": "integer"
         },
-
+        "dashboards": {
+            "description": "A list of a user's dashboards",
+            "type": "array",
+            "items": {
+                "type": "frames"
+            }
+        },
         "_links": { "$ref": "hal-schema.json#properties/_links" },
         "_embedded": { "$ref": "hal-schema.json#properties/_embedded" }
     }
