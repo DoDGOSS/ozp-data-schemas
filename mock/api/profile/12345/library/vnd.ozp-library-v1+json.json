@@ -1,0 +1,90 @@
+{
+    "_embedded": {
+        "item": [{
+            "_embedded": {
+                "ozp:application": {
+                    "_links": {
+                        "describes": {
+                            "href": "https://localhost:8443/app5"
+                        },
+                        "self": {
+                            "href": "https://localhost:8443/marketplace/api/serviceItem/5"
+                        }
+                    },
+                    "icons": {
+                        "banner": "https://localhost:8443/5/banner.png",
+                        "featuredBanner": "https://localhost:84435/5/featured-banner.png",
+                        "large": "https://localhost:8443/5/icon.png",
+                        "small": "https://localhost:8443/5/small-icon.png"
+                    },
+                    "id": 5,
+                    "launchUrls": {
+                        "default": "https://localhost:8443/app5"
+                    },
+                    "title": "Another Listing"
+                }
+            },
+            "folder": null
+        },
+        {
+            "_embedded": {
+                "ozp:application": [{
+                    "_links": {
+                        "describes": {
+                            "href": "https://localhost:8443/app2"
+                        },
+                        "self": {
+                            "href": "https://localhost:8443/marketplace/api/serviceItem/1"
+                        }
+                    },
+                    "icons": {
+                        "banner": "https://localhost:8443/banner.png",
+                        "featuredBanner": "https://localhost:8443/featured-banner.png",
+                        "large": "https://localhost:8443/icon.png",
+                        "small": "https://localhost:8443/small-icon.png"
+                    },
+                    "id": 1,
+                    "launchUrls": {
+                        "default": "https://localhost:8443/app2"
+                    },
+                    "title": "Another Listing"
+                },
+                {
+                    "_links": {
+                        "describes": {
+                            "href": "https://localhost:8443/app1"
+                        },
+                        "self": {
+                            "href": "https://localhost:8443/marketplace/api/serviceItem/2"
+                        }
+                    },
+                    "icons": {
+                        "banner": "https://localhost:8443/icons/mattahan/ultrabuuf/128/Comics-Hulkling-Sulking-icon.png",
+                        "featuredBanner": null,
+                        "large": null,
+                        "small": "https://localhost:8443/icons/mattahan/ultrabuuf/128/Comics-Hulkling-Sulking-icon.png"
+                    },
+                    "id": 2,
+                    "launchUrls": {
+                        "default": "https://localhost:8443/app1"
+                    },
+                    "title": "Listing1"
+                }]
+            },
+            "folder": "Folder 1"
+        }]
+    },
+    "_links": {
+        "curies": {
+            "href": "/docs/relations/ozp/{rel}",
+            "name": "ozp",
+            "templated": true
+        },
+        "self": {
+            "href": "https://localhost:8443/marketplace/api/profile/2/library"
+        },
+        "via": {
+            "href": "https://localhost:8443/marketplace/api/profile/2"
+        }
+    }
+}
