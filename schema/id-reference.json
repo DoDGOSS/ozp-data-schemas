@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "A representation of a reference to a entity by its ID",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier by which the server should relate to another entity",
+            "type": ["integer", "string"]
+        }
+    }
+}
+

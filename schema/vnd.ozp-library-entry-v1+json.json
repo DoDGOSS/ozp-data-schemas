@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "An entry in a user's Application Library, in a representation suitable for being sent in the body of an HTTP request, in order to e.g. add a new Application to the Library",
+    "type": "object",
+    "properties": {
+        "folder": {
+            "description": "The name of the folder (if any) in which this entry should appear in the user's library.  Folders are user-defined groupings of Applications within their library",
+            "type": ["string", "null"]
+        },
+        "serviceItem": {
+            "$ref": "id-reference.json",
+            "description": "A reference to the Application which this library entry represents"
+        },
+        "_links": {
+            "$ref": "hal-schema.json#properties/_links"
+        },
+        "_embedded": {
+            "$ref": "hal-schema.json#properties/_embedded"
+        }
+    },
+    "required": ["folder", "serviceItem"]
+}

@@ -1,0 +1,6 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "A list of vnd.ozp.library.entry+json representations",
+    "type": "array",
+    "items": { "$ref": "vnd.ozp-library-entry-v1+json.json" }
+}

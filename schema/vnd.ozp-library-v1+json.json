@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "description": "A user's Application Library in the Ozone Platform",
+    "type": "object"
+    "properties": {
+        "_links": { "$ref": "hal-schema.json#properties/_links" },
+        "_embedded": { "$ref": "hal-schema.json#properties/_embedded" }
+    }
+}
