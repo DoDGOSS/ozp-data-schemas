@@ -1,5 +1,6 @@
 {
     "id": "http://ozoneplatform.org/jsonschema/hal-schema.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
         "_links": {
@@ -7,15 +8,17 @@
             "title": "Hyperlink",
             "description": "Represents a hyperlink from the containing resource to a URI.",
             "additionalProperties": {
-                "type": [{
-                            "$ref": "#/definitions/link"
-                        },{
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/link"
+                    }, {
                         "type": "array",
                         "items": [
                             {"$ref": "#/definitions/link"}
                         ],
                         "uniqueItems": true,
-                        "additionalProperties": false}
+                        "additionalProperties": false
+                    }
                 ]
             },
             "optional": true
@@ -23,7 +26,7 @@
         "_embedded": {
             "type": "object",
             "additionalProperties": {
-                "type": [
+                "oneOf": [
                     {
                         "$ref": "#"
                     },
@@ -91,5 +94,5 @@
             },
             "additionalProperties": false
         }
-    }   
+    }
 }

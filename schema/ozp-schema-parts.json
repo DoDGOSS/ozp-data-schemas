@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Common schema components used in multiple OZP schemas",
+    "definitions": {
+        "selfReferencing": {
+            "definitions": {
+                "_links": {
+                    "type" : "object",
+                    "allOf" : [
+                        {"$ref": "hal-schema.json#definitions/_links"},
+                        {
+                            "properties" : {
+                                "self": { "$ref": "hal-schema.json#definitions/link" }
+                            },
+                            "additionalProperties" : true,
+                            "required": ["self"]
+                        }
+                    ]
+                }
+            }
+        },
+        "iwc": {
+            "allOf": [
+                { "$ref": "#selfReferencing" },
+                {
+                    "definitions": {
+                        "_links": {
+                            "type" : "object",
+                            "allOf" : [
+                                {"$ref": "hal-schema.json#definitions/_links"},
+                                {
+                                    "properties" : {
+                                        "ozp:iwcSelf": {
+                                            "$ref": "hal-schema.json#definitions/link"
+                                        }
+                                    },
+                                    "additionalProperties" : true,
+                                    "required": ["ozp:iwcSelf"]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "hasOzpCurie": {
+            "definitions": {
+                "_links": {
+                    "type" : "object",
+                    "allOf" : [
+                        {"$ref": "hal-schema.json#definitions/_links"},
+                        {
+                            "properties" : {
+                                "curies": {
+                                    "allOf": [
+                                        { "$ref": "hal-schema.json#definitions/link" },
+                                        {
+                                            "properties": {
+                                                "href": {
+                                                    "enum": [
+                                                        "http://ozoneplatform.org/docs/rels/{rel}"
+                                                    ]
+                                                },
+                                                "templated": {
+                                                    "enum": [true]
+                                                },
+                                                "name": {
+                                                    "enum": ["ozp"]
+                                                }
+                                            },
+                                            "required": ["templated","name"]
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": ["curies"],
+                            "additionalProperties" : true
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

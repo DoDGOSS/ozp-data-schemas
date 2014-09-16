@@ -1,9 +1,129 @@
 {
     "$schema": "http://json-schema.org/draft-03/schema#",
     "description": "A user's Application Library in the Ozone Platform",
-    "type": "object"
-    "properties": {
-        "_links": { "$ref": "hal-schema.json#properties/_links" },
-        "_embedded": { "$ref": "hal-schema.json#properties/_embedded" }
-    }
+    "definitions": {
+        "folder": {
+            "properties": {
+                "folder": {
+                    "description": "The name of the folder in which this Application should be displayed in the Application Library",
+                    "type": ["null", "string"],
+                    "maxLength": 256
+                },
+                "_embedded": {
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_embedded" },
+                        {
+                            "properties": {
+                                "ozp:application": {
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "icons": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "banner": {
+                                                            "description": "The URI of the banner image to be displayed for this Application, for instance in search results or the Application Library (600x375 px)",
+                                                            "format": "uri"
+                                                        },
+                                                        "featuredBanner": {
+                                                            "description": "The URI of the image to be used as the banner for this Application in the Featured section of the OZP Center (220x137 px)",
+                                                            "format": "uri"
+                                                        },
+                                                        "large": {
+                                                            "description": "The URI of the Large icon for this Application (30x30 px)",
+                                                            "format": "uri"
+                                                        },
+                                                        "small": {
+                                                            "description": "The URI of the Small icon for this Application (16x16 px)",
+                                                            "format": "uri"
+                                                        }
+                                                    }
+                                                },
+                                                "id": {
+                                                    "description": "An opaque, unique identifier for this Application",
+                                                    "type": ["string", "integer"]
+                                                },
+                                                "launchUrls": {
+                                                    "description": "A collection of launch URIs for an Application",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "default": {
+                                                            "description": "The only launchUrl that is guaranteed to be present",
+                                                            "format": "uri"
+                                                        }
+                                                    }
+                                                },
+                                                "title": {
+                                                    "description": "The title of this Application",
+                                                    "type": "string",
+                                                    "maxLength": 256
+                                                },
+                                                "_links": {
+                                                    "properties": {
+                                                        "describes": {
+                                                            "$ref": "hal-schema.json#definitions/link"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        { "$ref": "ozp-schema-parts.json#selfReferencing" }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "allOf": [
+        { "ref": "ozp-schema-parts.json#selfReferencing" },
+        { "ref": "ozp-schema-parts.json#hasOzpCurie" },
+        {
+            "type": "object",
+            "properties": {
+                "_links": {
+                    "type": "object",
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_links" },
+                        {
+                            "properties": {
+                                "via": {
+                                    "allOf": [
+                                        { "$ref": "hal-schema.json#definitions/link" },
+                                        {
+                                            "description": "The URI of the Application Library Entry associating this Application with this user's Library"
+                                        }
+                                    ]
+                                }
+                            },
+                            "additionalProperties" : true
+                        }
+                    ],
+                    "_embedded": {
+                        "allOf": [
+                            { "$ref": "hal-schema.json#properties/_embedded" },
+                            {
+                                "properties": {
+                                    "item": {
+                                        "oneOf": [
+                                            { "$ref": "#definitions/folder" },
+                                            {
+                                                "type": "array",
+                                                "items": [
+                                                    { "$ref": "#definitions/folder" }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
 }
