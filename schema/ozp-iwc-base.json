@@ -1,5 +1,5 @@
 {
-    "id": "ozp-iwc-base.json",
+    "id": "http://ozoneplatform.org/jsonschema/ozp-iwc-base.json",
     "definitions": {
         "_links": {
             "type" : "object",

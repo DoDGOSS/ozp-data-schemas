@@ -1,5 +1,5 @@
 {
-    "id": "hal-schema.json",
+    "id": "http://ozoneplatform.org/jsonschema/hal-schema.json",
     "type": "object",
     "properties": {
         "_links": {
