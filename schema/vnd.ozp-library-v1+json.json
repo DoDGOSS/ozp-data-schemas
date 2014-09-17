@@ -5,6 +5,7 @@
     "definitions": {
         "folder": {
             "type": "object",
+            "required": ["folder", "_embedded"],
             "properties": {
                 "folder": {
                     "description": "The name of the folder in which this Application should be displayed in the Application Library",
@@ -20,6 +21,7 @@
                                     "allOf": [
                                         {
                                             "type": "object",
+                                            "required": ["icons","id", "launchUrls", "title", "_links"],
                                             "properties": {
                                                 "icons": {
                                                     "type": "object",
@@ -49,6 +51,7 @@
                                                 "launchUrls": {
                                                     "description": "A collection of launch URIs for an Application",
                                                     "type": "object",
+                                                    "required": ["default"],
                                                     "properties": {
                                                         "default": {
                                                             "description": "The only launchUrl that is guaranteed to be present",
@@ -102,6 +105,7 @@
         { "ref": "ozp-schema-parts.json#hasOzpCurie" },
         {
             "type": "object",
+            "required": ["_links"],
             "properties": {
                 "_links": {
                     "type": "object",
@@ -128,6 +132,7 @@
                     "allOf": [
                         { "$ref": "hal-schema.json#properties/_embedded" },
                         {
+                            "required": ["item"],
                             "properties": {
                                 "item": {
                                     "oneOf": [
