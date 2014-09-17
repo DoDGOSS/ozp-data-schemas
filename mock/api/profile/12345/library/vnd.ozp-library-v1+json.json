@@ -9,6 +9,9 @@
                         },
                         "self": {
                             "href": "https://localhost:8443/marketplace/api/serviceItem/5"
+                        },
+                        "via": {
+                            "href": "https://localhost:8443/marketplace/api/profile/12345/library/5"
                         }
                     },
                     "icons": {
@@ -35,6 +38,9 @@
                         },
                         "self": {
                             "href": "https://localhost:8443/marketplace/api/serviceItem/1"
+                        },
+                        "via": {
+                            "href": "https://localhost:8443/marketplace/api/profile/12345/library/1"
                         }
                     },
                     "icons": {
@@ -56,6 +62,9 @@
                         },
                         "self": {
                             "href": "https://localhost:8443/marketplace/api/serviceItem/2"
+                        },
+                        "via": {
+                            "href": "https://localhost:8443/marketplace/api/profile/12345/library/2"
                         }
                     },
                     "icons": {
