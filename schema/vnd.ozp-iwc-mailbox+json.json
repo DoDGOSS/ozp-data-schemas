@@ -4,7 +4,7 @@
     "type": "object",
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-mailbox+json.json",
     "properties": {
-       "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
+       "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
             "type": "object",
             "properties": {},
@@ -41,5 +41,6 @@
                 }
             }
         }
-    }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }

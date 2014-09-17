@@ -5,7 +5,7 @@
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-transport-packet+json.json",
     "required": ["dst","ver"],
     "properties": {
-        "_links": { "$ref": "ozp-iwc-base.json#/definitions/_links" },
+        "_links": { "$ref": "hal-schema.json#/properties/_links" },
         "_embedded": {
             "type": "object",
             "properties": { },
@@ -53,5 +53,6 @@
             "type": "string",
             "description": "Resource to perform the action upon."
         }
-    }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }

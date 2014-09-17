@@ -13,11 +13,11 @@
                             "type": "object",
                             "description": "The URL to open a new instance of the intent handler."
                         },
-                        {"$ref" : "ozp-iwc-base.json#/definitions/_links"}
+                        {"$ref" : "hal-schema.json#/properties/_links"}
                     ]
                 }
             },
-            "additionalProperties":  { "$ref" : "ozp-iwc-base.json#/definitions/_links"}
+            "additionalProperties":  { "$ref" : "hal-schema.json#/properties/_links"}
         },
         "_embedded": {
             "type": "object",
@@ -51,5 +51,6 @@
                 {"$ref": "vnd.ozp-iwc-transport-packet+json.json"}
             ]
         }
-    }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }

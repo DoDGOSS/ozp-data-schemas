@@ -29,18 +29,18 @@ module.exports = function(grunt) {
             },
             src: 'schema/*.json'
           },
-          //applicationSchema: {
-              //options: makeTv4Options('schema/vnd.ozp-application-v1+json.json'),
-              //src: 'mock/api/application/v1/*/*.json'
-          //},
-          //dataSchema: {
-              //options: makeTv4Options('schema/vnd.ozp-iwc-data-object-v1+json.json'),
-              //src: ['mock/api/data/**/*.json','!mock/api/data/v1/exampleUser/index.json']
-          //},
-          //intentSchema: {
-              //options: makeTv4Options('schema/vnd.ozp-intent-description-v1+json.json'),
-              //src: ['mock/api/intents/v1/*/*/*/index.json']
-          //},
+          applicationSchema: {
+              options: makeTv4Options('schema/vnd.ozp-application-v1+json.json'),
+              src: 'mock/api/application/v1/*/*.json'
+          },
+          dataSchema: {
+              options: makeTv4Options('schema/vnd.ozp-iwc-data-object-v1+json.json'),
+              src: ['mock/api/data/**/*.json','!mock/api/data/v1/exampleUser/index.json']
+          },
+          intentSchema: {
+              options: makeTv4Options('schema/vnd.ozp-intent-description-v1+json.json'),
+              src: ['mock/api/intents/v1/*/*/*/index.json']
+          },
           //applicationLibrarySchema: {
               //options: {
                   //root: grunt.file.readJSON('schema/vnd.ozp-library-v1+json.json'),

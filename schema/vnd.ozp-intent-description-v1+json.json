@@ -5,7 +5,7 @@
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-intent-description+json.json",
     "required" : ["action","type"],
     "properties": {
-        "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
             "type": "object",
             "properties": {
@@ -34,6 +34,7 @@
         "label" : {
             "type": "string",
             "description": "A label suitable for use as a menu option or short tooltip."
-        }        
-    }
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }
