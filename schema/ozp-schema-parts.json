@@ -1,4 +1,5 @@
 {
+    "id": "http://ozoneplatform.org/jsonschema/ozp-schema-parts.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Common schema components used in multiple OZP schemas",
     "definitions": {

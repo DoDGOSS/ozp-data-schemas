@@ -1,4 +1,5 @@
 {
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-library-entry-v1+json.json",
     "$schema": "http://json-schema.org/draft-03/schema#",
     "description": "An entry in a user's Application Library, in a representation suitable for being sent in the body of an HTTP request, in order to e.g. add a new Application to the Library",
     "type": "object",
