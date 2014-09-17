@@ -4,6 +4,7 @@
     "description": "A user's Application Library in the Ozone Platform",
     "definitions": {
         "folder": {
+            "type": "object",
             "properties": {
                 "folder": {
                     "description": "The name of the folder in which this Application should be displayed in the Application Library",
@@ -65,11 +66,12 @@
                                                         "describes": {
                                                             "$ref": "hal-schema.json#definitions/link"
                                                         }
-                                                    }
+                                                    },
+                                                    "additionalProperties": true
                                                 }
                                             }
                                         },
-                                        { "$ref": "ozp-schema-parts.json#selfReferencing" }
+                                        { "$ref": "ozp-schema-parts.json#definitions/selfReferencing" }
                                     ]
                                 }
                             }
@@ -95,34 +97,35 @@
                                     "allOf": [
                                         { "$ref": "hal-schema.json#definitions/link" },
                                         {
-                                            "description": "The URI of the Application Library Entry associating this Application with this user's Library"
+                                            "description": "The URI of the Application Library Entry associating this Application with this user's Library",
+                                            "additionalProperties": true
                                         }
                                     ]
                                 }
                             },
                             "additionalProperties" : true
                         }
-                    ],
-                    "_embedded": {
-                        "allOf": [
-                            { "$ref": "hal-schema.json#properties/_embedded" },
-                            {
-                                "properties": {
-                                    "item": {
-                                        "oneOf": [
-                                            { "$ref": "#definitions/folder" },
-                                            {
-                                                "type": "array",
-                                                "items": [
-                                                    { "$ref": "#definitions/folder" }
-                                                ]
-                                            }
-                                        ]
-                                    }
+                    ]
+                },
+                "_embedded": {
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_embedded" },
+                        {
+                            "properties": {
+                                "item": {
+                                    "oneOf": [
+                                        { "$ref": "#/definitions/folder" },
+                                        {
+                                            "type": "array",
+                                            "items": [
+                                                { "$ref": "#/definitions/folder" }
+                                            ]
+                                        }
+                                    ]
                                 }
                             }
-                        ]
-                    }
+                        }
+                    ]
                 }
             }
         }

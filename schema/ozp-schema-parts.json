@@ -4,7 +4,7 @@
     "description": "Common schema components used in multiple OZP schemas",
     "definitions": {
         "selfReferencing": {
-            "definitions": {
+            "properties": {
                 "_links": {
                     "type" : "object",
                     "allOf" : [
@@ -18,13 +18,14 @@
                         }
                     ]
                 }
-            }
+            },
+            "additionalProperties": true
         },
         "iwc": {
             "allOf": [
-                { "$ref": "#selfReferencing" },
+                { "$ref": "#/definitions/selfReferencing" },
                 {
-                    "definitions": {
+                    "properties": {
                         "_links": {
                             "type" : "object",
                             "allOf" : [
@@ -40,12 +41,13 @@
                                 }
                             ]
                         }
-                    }
+                    },
+                    "additionalProperties": true
                 }
             ]
         },
         "hasOzpCurie": {
-            "definitions": {
+            "properties": {
                 "_links": {
                     "type" : "object",
                     "allOf" : [
@@ -79,7 +81,8 @@
                         }
                     ]
                 }
-            }
+            },
+            "additionalProperties": true
         }
     }
 }
