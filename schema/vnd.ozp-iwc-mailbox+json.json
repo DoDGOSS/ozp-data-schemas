@@ -3,7 +3,6 @@
     "description": "",
     "type": "object",
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-mailbox+json.json",
-    "required": [],
     "properties": {
        "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
         "_embedded": {

@@ -8,9 +8,13 @@
         "_links": {
             "properties": {
                 "describes": {
-                    "type": "object",
-                    "description": "The URL to open a new instance of the intent handler.",
-                    "properties": {"$ref" : "ozp-iwc-base.json#/definitions/_links/properties"}
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "description": "The URL to open a new instance of the intent handler."
+                        },
+                        {"$ref" : "ozp-iwc-base.json#/definitions/_links"}
+                    ]
                 }
             },
             "additionalProperties":  { "$ref" : "ozp-iwc-base.json#/definitions/_links"}
@@ -38,10 +42,14 @@
             "type": "string",
             "description": "A label suitable for use as a menu option or short tooltip."
         },
-        "invokeIntent" : { 
-            "type": "object",
-            "description": "A packet fragment to be sent when this intent is invoked.",
-            "properties" : {"$ref": "vnd.ozp-iwc-transport-packet+json.json"}
+        "invokeIntent" : {
+            "allOf": [
+                {
+                    "type": "object",
+                    "description": "A packet fragment to be sent when this intent is invoked."
+                },
+                {"$ref": "vnd.ozp-iwc-transport-packet+json.json"}
+            ]
         }
     }
 }
