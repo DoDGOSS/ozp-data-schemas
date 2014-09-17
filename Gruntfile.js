@@ -44,6 +44,14 @@ module.exports = function(grunt) {
           applicationLibrarySchema: {
               options:makeTv4Options('schema/vnd.ozp-library-v1+json.json'),
               src: 'mock/api/profile/*/library/vnd.ozp-library-v1+json.json'
+          },
+          applicationLibraryEntrySchema: {
+              options:makeTv4Options('schema/vnd.ozp-library-entry-v1+json.json'),
+              src: 'mock/api/profile/*/library/vnd.ozp-library-entry-v1+json.json'
+          },
+          applicationLibraryEntriesSchema: {
+              options:makeTv4Options('schema/vnd.ozp-library-entries-v1+json.json'),
+              src: 'mock/api/profile/*/library/vnd.ozp-library-entries-v1+json.json'
           }
       }
     };

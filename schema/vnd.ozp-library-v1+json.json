@@ -1,6 +1,6 @@
 {
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-library-v1+json.json",
-    "$schema": "http://json-schema.org/draft-03/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A user's Application Library in the Ozone Platform",
     "definitions": {
         "folder": {
