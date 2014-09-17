@@ -9,17 +9,15 @@
             "type": ["string", "null"]
         },
         "serviceItem": {
-            "$ref": "id-reference.json",
-            "description": "A reference to the Application which this library entry represents"
+            "oneOf": [
+                { "$ref": "id-reference.json" },
+                { "$ref": "ozp-library-application.json" }
+            ]
         },
         "_links": {
             "allOf": [
-                {
-                    "$ref": "ozp-schema-parts.json#definitions/selfReferencing/properties/_links"
-                },
-                {
-                    "$ref": "ozp-schema-parts.json#definitions/hasOzpCurie/properties/_links"
-                },
+                { "$ref": "ozp-schema-parts.json#definitions/selfReferencing/properties/_links" },
+                { "$ref": "ozp-schema-parts.json#definitions/hasOzpCurie/properties/_links" },
                 {
                     "type": "object",
                     "properties": {
