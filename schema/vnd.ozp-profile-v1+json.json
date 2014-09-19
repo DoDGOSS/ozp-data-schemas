@@ -1,0 +1,60 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-profile-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["bio", "organizations"],
+    "properties": {
+        "bio": {
+            "description": "A short biography of the user",
+            "type": ["null", "string"],
+            "maxLength": 1000
+        },
+        "createdDate": {
+            "description": "The timestamp at which this Profile was created in the system.  This property cannot be changed and is thus ignored by the server in request bodies",
+            "format": "date-time",
+            "type": "string"
+        },
+        "displayName": {
+            "description": "The human-readable name of the user, e.g. Firstname Lastname.  This property is derived from the user's security credentials and cannot be updated via REST",
+            "type": "string",
+            "maxLength": 256
+        },
+        "email": {
+            "description": "The user's email address.  This property is derived from the user's security credentials and cannot be updated via REST",
+            "format": "email",
+            "maxLength": 256,
+            "type": "string"
+        },
+        "lastLogin": {
+            "description": "The timestamp of the user's most recent login.  This property is managed by the server and cannot be manually updated via REST",
+            "format": "date-time",
+            "type": "string"
+        },
+        "username": {
+            "description": "The user's username, which must be unique within the system.  This property is derived from the user's security credentials and cannot be updated via REST",
+            "type": "string",
+            "maxLength": 256,
+            "minLength": 1
+        },
+        "organizations": {
+            "description": "id references to the Organizations that this user is a member of.  In server responses, these organizations also appear with more information in the _embedded object",
+            "type": "array",
+            "items": { "$ref": "id-reference.json" }
+        },
+        "_links": {
+            "properties": {
+                "ozp:application-library": { "$ref": "hal-schema.json#/definitions/link" }
+            },
+            "additionalProperties": true
+        },
+        "_embedded": {
+            "properties": {
+                "ozp:organization": { "$ref": "vnd.ozp-organization-v1+json.json" }
+            }
+        }
+    },
+    "additionalProperties": true,
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" }
+    ]
+}

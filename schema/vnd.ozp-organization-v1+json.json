@@ -1,0 +1,22 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-organization-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "icon": {
+            "description": "The URI of the icon for the Organization",
+            "type": "string",
+            "format": "uri",
+            "maxLength": 2000
+        },
+        "title": {
+            "description": "The name of the Organization",
+            "type": "string",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": true,
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" }
+    ]
+}

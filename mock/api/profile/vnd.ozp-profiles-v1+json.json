@@ -1,0 +1,48 @@
+{
+    "total": 1,
+    "_links": {
+        "curies": {
+            "href": "http://ozoneplatform.org/docs/rels/{rel}",
+            "name": "ozp",
+            "templated": true
+        },
+        "item": {
+            "href": "https://localhost:8443/marketplace/api/profile/1"
+        },
+        "self": {
+            "href": "https://localhost:8443/marketplace/api/profile"
+        }
+    },
+    "_embedded": {
+        "item": {
+            "createdDate": "2014-09-18T18:59:27.795+0000",
+            "bio": null,
+            "lastLogin": "2014-09-19T18:55:24.139+0000",
+            "organizations": [{
+                "id": 1
+            }],
+            "email": "slackbot@nowhere.com",
+            "username": "slackbot",
+            "displayName": "Slackbot",
+            "_links": {
+                "ozp:application-library": {
+                    "href": "https://localhost:8443/marketplace/api/profile/1/library"
+                },
+                "self": {
+                    "href": "https://localhost:8443/marketplace/api/profile/1"
+                }
+            },
+            "_embedded": {
+                "ozp:organization": {
+                    "icon": "https://localhost/",
+                    "title": "Agency 1",
+                    "_links": {
+                        "self": {
+                            "href": "https://localhost:8443/marketplace/api/agency/1"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
