@@ -13,6 +13,9 @@
             "description": "The name of the Organization",
             "type": "string",
             "maxLength": 255
+        },
+        "id": {
+            "description": "The unique opaque identifier of the Organization, assigned by the server"
         }
     },
     "additionalProperties": true,
