@@ -83,6 +83,39 @@
                 }
             },
             "additionalProperties": true
+        },
+        "pagedList": {
+            "required": ["total"],
+            "properties": {
+                "total": { "$ref": "http://json-schema.org/draft-04/schema#/definitions/positiveInteger" },
+                "_links": {
+                    "properties": {
+                        "item": {
+                            "description": "Links to the items within this page of the list",
+                            "additionalProperties": true
+                        },
+                        "next": {
+                            "description": "Link to the next page in the list",
+                            "additionalProperties": true
+                        },
+                        "prev": {
+                            "description": "Link to the previous page in the list",
+                            "additionalProperties": true
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "_embedded": {
+                    "properties": {
+                        "item": {
+                            "description": "Embedded representations of the items within this page of the list",
+                            "additionalProperties": true
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "allOf": [{ "$ref": "#/definitions/selfReferencing" }]
         }
     }
 }

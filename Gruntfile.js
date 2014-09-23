@@ -52,6 +52,22 @@ module.exports = function(grunt) {
           applicationLibraryEntriesSchema: {
               options:makeTv4Options('schema/vnd.ozp-library-entries-v1+json.json'),
               src: 'mock/api/profile/*/library/vnd.ozp-library-entries-v1+json.json'
+          },
+          profileSchema: {
+              options:makeTv4Options('schema/vnd.ozp-profile-v1+json.json'),
+              src: 'mock/api/profile/*/vnd.ozp-profile-v1+json.json'
+          },
+          profilesSchema: {
+              options:makeTv4Options('schema/vnd.ozp-profiles-v1+json.json'),
+              src: 'mock/api/profile/vnd.ozp-profiles-v1+json.json'
+          },
+          organizationsSchema: {
+              options:makeTv4Options('schema/vnd.ozp-organizations-v1+json.json'),
+              src: 'mock/api/profile/*/stewarded-organizations/vnd.ozp-organizations-v1+json.json'
+          },
+          organizationSchema: {
+              options:makeTv4Options('schema/vnd.ozp-organization-v1+json.json'),
+              src: 'mock/api/profile/*/stewarded-organizations/vnd.ozp-organization-v1+json.json'
           }
       }
     };
