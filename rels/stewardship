@@ -1,0 +1,9 @@
+stewardship
+==========
+
+The *stewardship* rel relates a profile (user) to a resource representing the organizations of
+which they are a content steward.  Note that in order for a user to be a content steward, they
+must have an appropriate role granted by the security plugin.  The presence of an organization
+in the stewardship list for a user merely indicates that the user **would** be a steward of that
+organization if the user has the appropriate role, not that the user necessarily **is** a
+steward of that organization.

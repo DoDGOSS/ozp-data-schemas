@@ -1,0 +1,7 @@
+application-library
+==================
+
+The *application-library* rel relates a profile (user) to their Application Library.
+The Application Library is the user's personal list of favorite applications.
+
+The converse of this relation is indicated by the *via* relation on the Application Library
