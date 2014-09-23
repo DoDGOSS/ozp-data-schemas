@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     var makeTv4Options=function(baseSchema) {
         var fs=require('fs');
-        return { 
+        return {
                   root: grunt.file.readJSON(baseSchema),
                   multi: true,
                   add: grunt.file.expand("schema/*.json").map(function(d) { return grunt.file.readJSON(d);})
@@ -18,6 +18,17 @@ module.exports = function(grunt) {
           }
       },
       tv4: {
+          validateSchemas: {
+            //validate that the schema documents themselves are valid
+            options: {
+                root: grunt.file.readJSON('schema/json-schema-draft-04.json'),
+                schemas: {
+                    'http://json-schema.org/draft-04/schema#': grunt.file.readJSON('schema/json-schema-draft-04.json')
+                },
+                banUnknown: false
+            },
+            src: 'schema/*.json'
+          },
           applicationSchema: {
               options: makeTv4Options('schema/vnd.ozp-application-v1+json.json'),
               src: 'mock/api/application/v1/*/*.json'
@@ -28,7 +39,19 @@ module.exports = function(grunt) {
           },
           intentSchema: {
               options: makeTv4Options('schema/vnd.ozp-intent-description-v1+json.json'),
-              src: ['mock/api/intents/v1/*/*/*/index.json']
+              src: 'mock/api/intents/v1/*/*/*/index.json'
+          },
+          applicationLibrarySchema: {
+              options:makeTv4Options('schema/vnd.ozp-library-v1+json.json'),
+              src: 'mock/api/profile/*/library/vnd.ozp-library-v1+json.json'
+          },
+          applicationLibraryEntrySchema: {
+              options:makeTv4Options('schema/vnd.ozp-library-entry-v1+json.json'),
+              src: 'mock/api/profile/*/library/vnd.ozp-library-entry-v1+json.json'
+          },
+          applicationLibraryEntriesSchema: {
+              options:makeTv4Options('schema/vnd.ozp-library-entries-v1+json.json'),
+              src: 'mock/api/profile/*/library/vnd.ozp-library-entries-v1+json.json'
           }
       }
     };

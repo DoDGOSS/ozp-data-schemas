@@ -5,12 +5,12 @@
     "id": "http://ozoneplatform.org/jsonschema/TYPENAME",
     "required": [],
     "properties": {
-        "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
             "type": "object",
             "properties": {},
             "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
-        }    
+        }
     }
     TODO: POPULATE THIS
 }

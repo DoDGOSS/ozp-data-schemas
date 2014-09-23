@@ -1,0 +1,85 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-library-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A user's Application Library in the Ozone Platform",
+    "definitions": {
+        "folder": {
+            "type": "object",
+            "required": ["folder", "_embedded"],
+            "properties": {
+                "folder": {
+                    "description": "The name of the folder in which this Application should be displayed in the Application Library",
+                    "type": ["null", "string"],
+                    "maxLength": 256
+                },
+                "_embedded": {
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_embedded" },
+                        {
+                            "properties": {
+                                "ozp:application": {
+                                    "allOf": [
+                                        { "$ref": "ozp-library-application.json" },
+                                        { "$ref": "ozp-schema-parts.json#definitions/selfReferencing" }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "allOf": [
+        { "ref": "ozp-schema-parts.json#selfReferencing" },
+        { "ref": "ozp-schema-parts.json#hasOzpCurie" },
+        {
+            "type": "object",
+            "required": ["_links"],
+            "properties": {
+                "_links": {
+                    "type": "object",
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_links" },
+                        {
+                            "required": ["via"],
+                            "properties": {
+                                "via": {
+                                    "allOf": [
+                                        { "$ref": "hal-schema.json#definitions/link" },
+                                        {
+                                            "description": "The Profile that owns this Application Library",
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            },
+                            "additionalProperties" : true
+                        }
+                    ]
+                },
+                "_embedded": {
+                    "allOf": [
+                        { "$ref": "hal-schema.json#properties/_embedded" },
+                        {
+                            "required": ["item"],
+                            "properties": {
+                                "item": {
+                                    "oneOf": [
+                                        { "$ref": "#/definitions/folder" },
+                                        {
+                                            "type": "array",
+                                            "items": [
+                                                { "$ref": "#/definitions/folder" }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

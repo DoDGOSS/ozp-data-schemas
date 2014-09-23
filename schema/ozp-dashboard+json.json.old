@@ -1,114 +1,90 @@
 {
     "type":"object",
-    "$schema": "http://json-schema.org/draft-03/schema",
+    "$schema": "http://json-schema.org/draft-04/schema",
     "description": "The representation of a user's webtop dashboards",
-    "required":false,
     "properties":{
         "dashboards": {
             "type":"array",
-            "required":false,
             "items": {
                 "type":"object",
-                "required":false,
                 "properties": {
                     "frames": {
                         "type":"array",
-                        "required":false,
                         "items": {
                             "type":"object",
-                            "required":false,
                             "properties": {
                                 "appId": {
                                     "type":"string",
-                                    "description": "A unique id for an application",
-                                    "required":false
+                                    "description": "A unique id for an application"
                                 },
                                 "desktopLayout": {
                                     "type":"object",
                                     "description": "The representation of this dashboard as a desktop view",
-                                    "required":false,
                                     "properties":{
                                         "height": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "left": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "top": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "width": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "zIndex": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         }
                                     }
                                 },
                                 "gridLayout": {
                                     "type":"object",
-                                    "required":false,
                                     "description": "The representation of this dashboard as a grid view",
                                     "properties":{
                                         "col": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "row": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "sizeX": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         },
                                         "sizeY": {
-                                            "type":"number",
-                                            "required":false
+                                            "type":"number"
                                         }
                                     }
                                 },
                                 "id": {
-                                    "type":"string",
-                                    "required":false
+                                    "type":"string"
                                 }
                             }
                         }
                     },
                     "id": {
-                        "type":"number",
-                        "required":false
+                        "type":"number"
                     },
                     "layout": {
                         "type":"string",
-                        "description": "The chosen layout of this dashboard",
-                        "required":false
+                        "description": "The chosen layout of this dashboard"
                     },
                     "name": {
-                        "type":"string",
-                        "required":false
+                        "type":"string"
                     }
                 }
             }
         },
         "defaultDashboard": {
             "type":"number",
-            "description": "A user's chosen default dashboard",
-            "required":false
+            "description": "A user's chosen default dashboard"
         },
         "name": {
-            "type":"string",
-            "required":false
+            "type":"string"
         },
         "user": {
             "type":"string",
-            "description": "A user name",
-            "required":false
+            "description": "A user name"
         }
     }
 }

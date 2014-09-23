@@ -1,0 +1,13 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/id-reference.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation of a reference to a entity by its ID",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier by which the server should relate to another entity",
+            "type": ["integer", "string"]
+        }
+    }
+}
+

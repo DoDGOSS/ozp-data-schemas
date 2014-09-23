@@ -1,0 +1,43 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-library-entry-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "An entry in a user's Application Library, in a representation suitable for being sent in the body of an HTTP request, in order to e.g. add a new Application to the Library",
+    "type": "object",
+    "properties": {
+        "folder": {
+            "description": "The name of the folder (if any) in which this entry should appear in the user's library.  Folders are user-defined groupings of Applications within their library",
+            "type": ["string", "null"]
+        },
+        "serviceItem": {
+            "oneOf": [
+                { "$ref": "id-reference.json" },
+                { "$ref": "ozp-library-application.json" }
+            ]
+        },
+        "_links": {
+            "allOf": [
+                { "$ref": "ozp-schema-parts.json#definitions/selfReferencing/properties/_links" },
+                { "$ref": "ozp-schema-parts.json#definitions/hasOzpCurie/properties/_links" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "collection": {
+                            "allOf": [
+                                { "$ref": "hal-schema.json#definitions/link" },
+                                {
+                                    "description": "A URI referencing the Application Library that this entry belongs to",
+                                    "additionalProperties": true
+                                }
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            ]
+        },
+        "_embedded": {
+            "$ref": "hal-schema.json#properties/_embedded"
+        }
+    },
+    "required": ["folder", "serviceItem"]
+}

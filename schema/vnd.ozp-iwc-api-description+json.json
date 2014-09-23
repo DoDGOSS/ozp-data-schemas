@@ -3,9 +3,8 @@
     "description": "",
     "type": "object",
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-api-description+json.json",
-    "required": [],
     "properties": {
-        "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
             "type": "object",
             "properties": {},
@@ -18,5 +17,6 @@
                 "type": "string"
             }
         }
-    }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }

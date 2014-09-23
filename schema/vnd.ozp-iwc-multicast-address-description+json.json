@@ -5,7 +5,7 @@
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-multicast-address-description+json.json",
     "required": ["address","type"],
     "properties": {
-        "_links": { "$ref" : "ozp-iwc-base.json#/definitions/_links"},
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
             "type": "object",
             "properties": {},
@@ -37,6 +37,7 @@
                 "description": "The IWC address of this type",
                 "format": "iwcAddress"
             }
-        }                
-    }
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
 }
