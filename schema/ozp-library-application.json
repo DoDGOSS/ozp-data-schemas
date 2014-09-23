@@ -2,7 +2,7 @@
     "id": "http://ozoneplatform.org/jsonschema/ozp-library-application.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "required": ["icons","id", "launchUrls", "title", "_links"],
+    "required": ["icons","id", "launchUrls", "title", "uuid", "_links"],
     "properties": {
         "icons": {
             "type": "object",
@@ -44,6 +44,10 @@
             "description": "The title of this Application",
             "type": "string",
             "maxLength": 256
+        },
+        "uuid": {
+            "description": "An opaque, unique identifier for this Application",
+            "type": ["string"]
         },
         "_links": {
             "properties": {
