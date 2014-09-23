@@ -1,5 +1,5 @@
 {
-    "id": "http://ozoneplatform.org/jsonschema/id-reference.json",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-id-ref-v1+json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of a reference to a entity by its ID",
     "type": "object",

@@ -10,7 +10,7 @@
         },
         "serviceItem": {
             "oneOf": [
-                { "$ref": "id-reference.json" },
+                { "$ref": "vnd.ozp-id-ref-v1+json" },
                 { "$ref": "ozp-library-application.json" }
             ]
         },
