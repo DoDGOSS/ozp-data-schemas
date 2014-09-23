@@ -7,6 +7,7 @@
                 }
             },
             "icon": "https://localhost/",
+            "id": 1,
             "title": "Agency 1"
         }
     },
@@ -19,15 +20,18 @@
         "ozp:application-library": {
             "href": "https://localhost:8443/marketplace/api/profile/1/library"
         },
+        "ozp:stewardship": {
+            "href": "https://localhost:8443/marketplace/api/profile/1/stewarded-organizations"
+        },
         "self": {
             "href": "https://localhost:8443/marketplace/api/profile/1"
         }
     },
-    "bio": "Slackbot grew up on a farm",
+    "bio": null,
     "createdDate": "2014-09-18T18:59:27.795+0000",
     "displayName": "Slackbot",
     "email": "slackbot@nowhere.com",
-    "lastLogin": "2014-09-19T17:06:26.588+0000",
+    "lastLogin": "2014-09-23T14:01:46.218+0000",
     "organizations": [
         {
             "id": 1

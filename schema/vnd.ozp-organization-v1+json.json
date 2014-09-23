@@ -2,6 +2,7 @@
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-organization-v1+json.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
+    "required": ["icon", "title"],
     "properties": {
         "icon": {
             "description": "The URI of the icon for the Organization",

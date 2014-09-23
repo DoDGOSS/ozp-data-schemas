@@ -43,14 +43,17 @@
         },
         "_links": {
             "properties": {
-                "ozp:application-library": { "$ref": "hal-schema.json#/definitions/link" }
+                "ozp:application-library": { "$ref": "hal-schema.json#/definitions/link" },
+                "ozp:stewardship": { "$ref": "hal-schema.json#/definitions/link" }
             },
+            "required": ["ozp:application-library", "ozp:stewardship"],
             "additionalProperties": true
         },
         "_embedded": {
             "properties": {
                 "ozp:organization": { "$ref": "vnd.ozp-organization-v1+json.json" }
-            }
+            },
+            "required": ["ozp:organization"]
         }
     },
     "additionalProperties": true,
