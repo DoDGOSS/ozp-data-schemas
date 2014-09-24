@@ -7,11 +7,11 @@
       "entity":{
   "name": "dashboards",
   "user": "joebloe",
-  "defaultDashboard": 0,
+  "currentDashboard": "0",
   "dashboards": [
     {
       "name": "Junk",
-      "id": 0,
+      "id": "0",
       "layout": "grid",
       "frames": [
         {
@@ -120,7 +120,7 @@
     },
     {
       "name": "Other stuff",
-      "id": 1,
+      "id": "1",
       "layout": "desktop",
       "frames": [
         {
@@ -144,7 +144,7 @@
     },
     {
       "name": "Bouncing Balls",
-      "id": 2,
+      "id": "2",
       "layout": "grid",
       "frames": [
         {

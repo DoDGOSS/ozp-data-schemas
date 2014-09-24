@@ -63,7 +63,7 @@
                         }
                     },
                     "id": {
-                        "type":"number"
+                        "type":"string"
                     },
                     "layout": {
                         "type":"string",
@@ -75,9 +75,9 @@
                 }
             }
         },
-        "defaultDashboard": {
+        "currentDashboard": {
             "type":"number",
-            "description": "A user's chosen default dashboard"
+            "description": "A user's current dashboard"
         },
         "name": {
             "type":"string"
