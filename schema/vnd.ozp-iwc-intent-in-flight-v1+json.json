@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "The state of an intent being executed.",
+    "type": "object",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-in-flight-v1+json.json",
+    "required" : ["action","type","entity","state"],
+
+    "properties": {
+        "_links": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties":  { "$ref" : "hal-schema.json#/properties/_links"}
+        },
+        "_embedded": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
+        },
+        "intent": {
+            "type": "object",
+            "description": "The intent being invoked.",
+            "properties": {
+                "type": {
+                    "type" : "string",
+                    "format": "mimeType",
+                    "description": "The content type for this intent."
+                },
+                "action" : {
+                    "type": "string",
+                    "description": "The action that this intent takes."
+                }                
+            }
+        },
+        "contentType": {
+            "type": "string",
+            "description": "The content type of the intent invocation entity."
+        },
+        "entity": {
+            "type": "object",
+            "description": "The object itself."
+        },
+        "reply": {
+            "type": "object",
+            "description": "The response to this intent invocation.  Only exists in the 'complete' and 'error' states.",
+            "properties": {
+                "contentType": {
+                    "type": "string",
+                    "description": "The content type of the response."
+                },
+                "entity": {
+                    "type": "object",
+                    "description": "The actual payload of the response."
+                }
+            }
+        },
+        "state": {
+            "type": "string",
+            "description": "The candidate handlers for this intent.",
+            "enum": ["new", "choosing", "running", "error", "complete"]
+        },
+        "status": {
+            "type": "string",
+            "description": "The candidate handlers for this intent.",
+            "enum": ["new", "choosing", "running", "error", "complete"]
+        },
+        "handlerChoices": {
+            "type": "array",
+            "description": "The candidate handlers for this intent.",
+            "items": {"$ref" : "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-handler-v1+json.json#"}
+        },
+        "handlerChosen": {
+            "type": "object",
+            "description": "The chosen intent handler.  Will be null prior to the 'delivering' state.",
+            "properties": {
+                "resource" : {
+                    "description": "An IWC URI to the intent handler resource (e.g. intents.api/text/plain/12345)",
+                    "type" : "object",
+                    "properties": {"$ref":"hal-schema.json#definitions/link/properties"},
+                    "format": "uri"
+                },
+                "reason" : {
+                     "description":"How the handler was chosen: 'user', 'pref', 'onlyOne'",
+                     "type": "string",
+                     "enum": ["user", "pref", "onlyOne"]
+                }
+            }
+        },
+        "handler": {
+            "type": "object",
+            "description": "The application that is handling the intent invocation.  Will be null prior to the 'processing' state.",
+            "properties":{
+                "resource": {
+                    "description": "An IWC URI to handler's metadata in names.api (e.g. names.api/address/45678)",
+                    "type" : "object",
+                    "properties": {"$ref":"hal-schema.json#definitions/link/properties"},
+                    "format": "uri"
+                },
+                "address": {
+                    "description": "The handler's bus address (e.g. 45678)",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
+}
