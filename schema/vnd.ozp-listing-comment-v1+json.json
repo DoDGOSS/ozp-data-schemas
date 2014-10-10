@@ -1,0 +1,45 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-listing-comment-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "rate": {
+            "type": ["null", "integer"],
+            "description": "The rating that this user has given this Listing, on a scale of 1 - 5"
+        },
+        "text": {
+            "type": ["null", "string"],
+            "description": "A comment or review of this Listing by the ItemComment owner"
+        },
+        "id": {
+            "type": ["string", "integer"],
+            "description": "An opaque, unique identifier for the Listing"
+        },
+        "_links": {
+            "properties": {
+                "ozp:application": {
+                    "type": "object",
+                    "description": "A reference to the Listing that this comment is in reference to",
+                    "allOf": [
+                        { "$ref": "hal-schema.json#/definitions/link" }
+                    ],
+                    "additionalProperties": true
+                },
+                "via": {
+                    "type": "object",
+                    "description": "A reference to the Profile who authored this comment",
+                    "allOf": [
+                        { "$ref": "hal-schema.json#/definitions/link" }
+                    ],
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true,
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" },
+        { "$ref": "hal-schema.json" }
+    ]
+}

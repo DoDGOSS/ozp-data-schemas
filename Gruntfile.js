@@ -68,6 +68,14 @@ module.exports = function(grunt) {
           organizationSchema: {
               options:makeTv4Options('schema/vnd.ozp-organization-v1+json.json'),
               src: 'mock/api/profile/*/stewarded-organizations/vnd.ozp-organization-v1+json.json'
+          },
+          itemCommentsSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listing-comments-v1+json.json'),
+              src: 'mock/api/listing/*/itemComment/vnd.ozp-listing-comments-v1+json.json'
+          },
+          itemCommentSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listing-comment-v1+json.json'),
+              src: 'mock/api/listing/*/itemComment/vnd.ozp-listing-comment-v1+json.json'
           }
       }
     };

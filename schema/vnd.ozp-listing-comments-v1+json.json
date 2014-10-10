@@ -1,0 +1,36 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-profiles-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "_links": {
+            "type": "object",
+            "properties": {
+                "via": {
+                    "description": "A reference to the listing to which these comments are attached",
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": true
+        },
+        "_embedded": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "oneOf": [
+                        { "$ref": "vnd.ozp-listing-comment-v1+json.json" },
+                        {
+                            "type": "array",
+                            "items": { "$ref": "vnd.ozp-listing-comment-v1+json.json" }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/hasOzpCurie" },
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" },
+        { "$ref": "hal-schema.json" }
+    ]
+}
