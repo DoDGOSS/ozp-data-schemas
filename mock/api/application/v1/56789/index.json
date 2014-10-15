@@ -1,5 +1,6 @@
 {
     "name" : "Gridster Layout",
+    "id": "8e8265bb-fef8-49ab-8b13-2356a1647b6b",
     "description" : "A sample container that presents widgets in a tile based layout",
     "type" : "application",
     "state" : "active",

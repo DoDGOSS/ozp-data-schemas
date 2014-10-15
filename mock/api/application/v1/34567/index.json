@@ -1,5 +1,6 @@
 {
     "name" : "Red Bouncing Ball",
+    "id": "bf9b3b6a-b7cb-4f65-8923-e371e9165e23",
     "description" : "A red bouncing ball",
     "type" : "application",
     "state" : "active",

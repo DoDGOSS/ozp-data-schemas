@@ -1,5 +1,6 @@
 {
     "name" : "Debugger",
+    "id": "f084e827-ce8d-4f2c-97f8-13eba94ae889",
     "description" : "The IWC Debugger",
     "type" : "application",
     "state" : "active",

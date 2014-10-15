@@ -9,6 +9,10 @@
             "description": "The name that end users will know the application by.",
             "type": "string"
         },
+        "id": {
+          "description": "A UUID for this application.",
+          "type": "string"
+        },
         "description" : {
             "description": "A description of the application suitable for presentation to the user.",
             "type": "string"
