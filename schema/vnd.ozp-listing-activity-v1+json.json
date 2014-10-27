@@ -1,0 +1,64 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-listing-activity-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["activityDate", "changeDetails", "action", "id"],
+    "description": "A representation of an event in the lifecycle of a listing, such as a modification, creation, approval, etc",
+    "properties": {
+        "activityDate": {
+            "description": "The timestamp when this activity took place",
+            "type": "string",
+            "format": "date-time"
+        },
+        "changeDetails": {
+            "description": "A list of details regarding the changes on the object.  This list will only be non-empty for activities whose \"action\" value is \"MODIFIED\"",
+            "type": "array",
+            "items": {
+                "required": ["fieldName", "oldValue", "newValue"],
+                "properties": {
+                    "fieldName": {
+                        "description": "The name of the field that was changed",
+                        "type": "string",
+                        "maxLength": 255
+                    },
+                    "oldValue": {
+                        "description": "The previous value of the field",
+                        "type": "string",
+                        "maxLength": 4000
+                    },
+                    "newValue": {
+                        "description": "The new value of the field",
+                        "type": "string",
+                        "maxLength": 4000
+                    }
+                }
+            }
+        },
+        "action": {
+            "description": "The conceptual action to occur to the listing",
+            "enum": [
+                "CREATED",
+                "MODIFIED",
+                "SUBMITTED",
+                "APPROVED",
+                "REJECTED",
+                "ENABLED",
+                "DISABLED",
+                "ADDRELATEDTOITEM",
+                "REMOVERELATEDTOITEM",
+                "ADDRELATEDITEMS",
+                "REMOVERELATEDITEMS",
+                "REVIEW_EDITED",
+                "REVIEW_DELETED"
+            ]
+        },
+        "id": {
+            "description": "A unique opaque identifier for the activity"
+        },
+        "_links": {},
+        "_embedded": {}
+    },
+    "allOf": [
+        { "$ref": "hal-schema.json" }
+    ]
+}

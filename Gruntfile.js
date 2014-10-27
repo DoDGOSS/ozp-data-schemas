@@ -76,6 +76,10 @@ module.exports = function(grunt) {
           itemCommentSchema: {
               options:makeTv4Options('schema/vnd.ozp-listing-comment-v1+json.json'),
               src: 'mock/api/listing/*/itemComment/vnd.ozp-listing-comment-v1+json.json'
+          },
+          listingActivitiesSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listing-activities-v1+json.json'),
+              src: 'mock/api/listing/activity/vnd.ozp-listing-activities-v1+json.json'
           }
       }
     };

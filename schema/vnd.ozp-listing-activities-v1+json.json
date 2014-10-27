@@ -1,0 +1,26 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-listing-activities-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "_embedded": {
+            "properties": {
+                "item": {
+                    "oneOf": [
+                        { "$ref": "vnd.ozp-listing-activity-v1+json.json" },
+                        {
+                            "type": "array",
+                            "items": { "$ref": "vnd.ozp-listing-activity-v1+json.json" }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "additionalProperties": true,
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" },
+        { "$ref": "ozp-schema-parts.json#/definitions/pagedList" },
+        { "$ref": "hal-schema.json" }
+    ]
+}
