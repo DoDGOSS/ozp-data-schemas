@@ -7,10 +7,10 @@
             "properties": {
                 "item": {
                     "oneOf": [
-                        { "$ref": "vnd.ozp-organizations-v1+json.json" },
+                        { "$ref": "vnd.ozp-organization-v1+json.json" },
                         {
                             "type": "array",
-                            "items": { "$ref": "vnd.ozp-organizations-v1+json.json" }
+                            "items": { "$ref": "vnd.ozp-organization-v1+json.json" }
                         }
                     ]
                 }
