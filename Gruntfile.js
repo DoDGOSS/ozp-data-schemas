@@ -79,7 +79,7 @@ module.exports = function(grunt) {
           },
           listingActivitiesSchema: {
               options:makeTv4Options('schema/vnd.ozp-listing-activities-v1+json.json'),
-              src: 'mock/api/listing/activity/vnd.ozp-listing-activities-v1+json.json'
+              src: 'mock/api/listing/**/vnd.ozp-listing-activities-v1+json.json'
           }
       }
     };

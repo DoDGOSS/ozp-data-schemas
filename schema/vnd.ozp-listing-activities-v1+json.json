@@ -15,9 +15,18 @@
                     ]
                 }
             }
+        },
+        "_links": {
+            "_links": {
+                "properties": {
+                    "via": {
+                        "description": "If present, references the listing that this collection of activities belongs to",
+                        "allOf": [{ "$ref": "hal-schema.json#/definitions/link" }]
+                    }
+                }
+            }
         }
     },
-    "additionalProperties": true,
     "allOf": [
         { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" },
         { "$ref": "ozp-schema-parts.json#/definitions/pagedList" },

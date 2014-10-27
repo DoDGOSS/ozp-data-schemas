@@ -87,11 +87,19 @@
         "pagedList": {
             "required": ["total"],
             "properties": {
-                "total": { "$ref": "http://json-schema.org/draft-04/schema#/definitions/positiveInteger" },
+                "total": {
+                    "allOf": [
+                        { "$ref": "http://json-schema.org/draft-04/schema#/definitions/positiveInteger" },
+                        {
+                            "description": "The total number of items in all pages of the list.  This value is only present if the collection is in fact paged",
+                            "additionalProperties": true
+                        }
+                    ]
+                },
                 "_links": {
                     "properties": {
                         "item": {
-                            "description": "Links to the items within this page of the list",
+                            "description": "Links to the items within this page of the list, if the items are directly referenceable",
                             "additionalProperties": true
                         },
                         "next": {
