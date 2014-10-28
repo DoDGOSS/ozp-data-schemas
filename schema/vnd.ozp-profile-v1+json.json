@@ -41,6 +41,9 @@
             "type": "array",
             "items": { "$ref": "vnd.ozp-id-ref-v1+json" }
         },
+        "id": {
+            "description": "The opaque unique identifier assigned to this profile by the server"
+        },
         "_links": {
             "properties": {
                 "ozp:application-library": { "$ref": "hal-schema.json#/definitions/link" },

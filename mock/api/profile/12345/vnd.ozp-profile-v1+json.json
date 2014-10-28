@@ -28,6 +28,7 @@
         }
     },
     "bio": null,
+    "id": 1,
     "createdDate": "2014-09-18T18:59:27.795+0000",
     "displayName": "Slackbot",
     "email": "slackbot@nowhere.com",
