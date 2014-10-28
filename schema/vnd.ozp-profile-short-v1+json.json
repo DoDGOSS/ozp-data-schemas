@@ -1,0 +1,26 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-profile-short-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["username", "displayName", "id"],
+    "description": "A brief representation of a user Profile",
+    "properties": {
+        "username": {
+            "description": "The user's unique username",
+            "type": "string",
+            "maxLength": 255
+        },
+        "displayName": {
+            "description": "A human-friendly name for this user",
+            "type": "string",
+            "maxLength": 255
+        },
+        "id": {
+            "description": "A unique opaque identifier for this user"
+        },
+        "_links": {}
+    },
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" }
+    ]
+}

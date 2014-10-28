@@ -5,13 +5,18 @@
     "required": ["activityDate", "changeDetails", "action", "id"],
     "description": "A representation of an event in the lifecycle of a listing, such as a modification, creation, approval, etc",
     "properties": {
+        "rejectionDescription": {
+            "description": "The reason given for rejecting the listing",
+            "type": "string",
+            "maxLength": 2000
+        },
         "activityDate": {
             "description": "The timestamp when this activity took place",
             "type": "string",
             "format": "date-time"
         },
         "changeDetails": {
-            "description": "A list of details regarding the changes on the object.  This list will only be non-empty for activities whose \"action\" value is \"MODIFIED\"",
+            "description": "A list of details regarding the changes on the object.  This list will only be non-empty for activities whose \"action\" value is \"MODIFIED\", \"REVIEW_EDITED\", or \"REVIEW_DELETED\"",
             "type": "array",
             "items": {
                 "required": ["fieldName", "oldValue", "newValue"],
@@ -23,7 +28,7 @@
                     },
                     "oldValue": {
                         "description": "The previous value of the field",
-                        "type": "string",
+                        "type": ["string", "null"],
                         "maxLength": 4000
                     },
                     "newValue": {
@@ -56,7 +61,12 @@
             "description": "A unique opaque identifier for the activity"
         },
         "_links": {},
-        "_embedded": {}
+        "_embedded": {
+            "required": ["author"],
+            "properties": {
+                "author": { "$ref": "vnd.ozp-profile-short-v1+json.json" }
+            }
+        }
     },
     "allOf": [
         { "$ref": "hal-schema.json" }
