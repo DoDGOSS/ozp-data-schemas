@@ -2,6 +2,7 @@
     "name" : "Red Bouncing Ball",
     "id": "bf9b3b6a-b7cb-4f65-8923-e371e9165e23",
     "description" : "A red bouncing ball",
+    "descriptionShort" : "A red bouncing ball",
     "type" : "application",
     "state" : "active",
     "uiHints": {
@@ -22,7 +23,9 @@
     ],
     "icons" : {
         "small": "http://localhost:15002/largeIcon.png",
-        "large": "http://localhost:15002/smallIcon.png"
+        "large": "http://localhost:15002/smallIcon.png",
+        "banner": "http://localhost:15002/largeIcon.png",
+        "featuredBanner": "http://localhost:15002/smallIcon.png"
     },
     "screenShots" : [
         {

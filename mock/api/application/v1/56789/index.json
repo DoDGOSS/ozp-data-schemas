@@ -2,6 +2,7 @@
     "name" : "Gridster Layout",
     "id": "8e8265bb-fef8-49ab-8b13-2356a1647b6b",
     "description" : "A sample container that presents widgets in a tile based layout",
+    "descriptionShort" : "A sample container using a tile layout",
     "type" : "application",
     "state" : "active",
     "uiHints": {
@@ -15,7 +16,9 @@
     "intents": [],
     "icons" : {
         "small": "http://localhost:15004/largeIcon.png",
-        "large": "http://localhost:15004/smallIcon.png"
+        "large": "http://localhost:15004/smallIcon.png",
+        "banner": "http://localhost:15004/largeIcon.png",
+        "featuredBanner": "http://localhost:15004/smallIcon.png"
     },
     "screenShots" : [
         {

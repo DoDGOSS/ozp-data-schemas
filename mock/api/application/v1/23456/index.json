@@ -2,6 +2,7 @@
     "name" : "Green Bouncing Ball",
     "id": "25a3d034-31f1-4dbe-b9b4-03c8dad7b5f8",
     "description" : "A green bouncing ball",
+    "descriptionShort": "A green bouncing ball",
     "type" : "application",
     "state" : "active",
     "uiHints": {
@@ -22,7 +23,9 @@
     ],
     "icons" : {
         "small": "http://localhost:15001/largeIcon.png",
-        "large": "http://localhost:15001/smallIcon.png"
+        "large": "http://localhost:15001/smallIcon.png",
+        "banner": "http://localhost:15001/largeIcon.png",
+        "featuredBanner": "http://localhost:15001/smallIcon.png"
     },
     "screenShots" : [
         {

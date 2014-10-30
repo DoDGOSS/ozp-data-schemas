@@ -17,6 +17,10 @@
             "description": "A description of the application suitable for presentation to the user.",
             "type": "string"
         },
+        "descriptionShort": {
+          "description": "A short description of the application suitable for presentation to the user.",
+          "type": "string"
+        },
         "type" : {
             "description": "Describes how the application will be handled by OZP.  Not presented to the user.",
             "type" : "string",
@@ -52,6 +56,14 @@
                 "large" : {
                     "type": "string",
                     "format": "uri"
+                },
+                "banner": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "featuredBanner": {
+                  "type": "string",
+                  "format": "uri"
                 }
             },
             "additionalProperties" : {

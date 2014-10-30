@@ -2,6 +2,7 @@
     "name" : "Debugger",
     "id": "f084e827-ce8d-4f2c-97f8-13eba94ae889",
     "description" : "The IWC Debugger",
+    "descriptionShort" : "The IWC Debugger",
     "type" : "application",
     "state" : "active",
     "uiHints": {
@@ -15,7 +16,9 @@
     "intents": [ ],
     "icons" : {
         "small": "http://localhost:13000/tools/debugger/smallIcon.png",
-        "large": "http://localhost:13000/tools/debugger/largeIcon.png"
+        "large": "http://localhost:13000/tools/debugger/largeIcon.png",
+        "banner": "http://localhost:13000/tools/debugger/smallIcon.png",
+        "featuredBanner": "http://localhost:13000/tools/debugger/largeIcon.png"
     },
     "screenShots" : [
         {

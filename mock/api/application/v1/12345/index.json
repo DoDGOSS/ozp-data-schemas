@@ -2,6 +2,7 @@
     "name" : "Blue Bouncing Ball",
     "id": "94c734b0-cbbb-4caf-9cb8-29a3d45afc84",
     "description" : "A blue bouncing ball",
+    "descriptionShort": "A blue bouncing ball",
     "type" : "application",
     "state" : "active",
     "uiHints": {
@@ -22,7 +23,9 @@
     ],
     "icons" : {
         "small": "http://localhost:15000/largeIcon.png",
-        "large": "http://localhost:15000/smallIcon.png"
+        "large": "http://localhost:15000/smallIcon.png",
+        "banner": "http://localhost:15000/smallIcon.png",
+        "featuredBanner": "http://localhost:15000/smallIcon.png"
     },
     "screenShots" : [
         {
