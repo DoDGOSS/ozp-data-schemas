@@ -20,7 +20,7 @@
         "banner": "http://localhost:13000/tools/debugger/smallIcon.png",
         "featuredBanner": "http://localhost:13000/tools/debugger/largeIcon.png"
     },
-    "screenShots" : [
+    "screenshots" : [
         {
             "href" : "http://localhost:13000/tools/debugger/screenShot.png",
             "title" : "A screenshot"

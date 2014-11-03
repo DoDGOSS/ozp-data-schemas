@@ -27,7 +27,7 @@
         "banner": "http://localhost:15000/smallIcon.png",
         "featuredBanner": "http://localhost:15000/smallIcon.png"
     },
-    "screenShots" : [
+    "screenshots" : [
         {
             "href" : "http://localhost:15000/screenShot.png",
             "title" : "A screenshot"

@@ -71,7 +71,7 @@
                     "format": "uri"
             }
         },
-        "screenShots" : {
+        "screenshots" : {
             "type" : "array",
             "items": {"$ref" : "hal-schema.json#definitions/link" }
         },
