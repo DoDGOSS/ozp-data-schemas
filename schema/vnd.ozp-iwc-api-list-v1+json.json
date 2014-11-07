@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A list of registered apis in the IWC names api.",
+    "type": "object",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-api-list-v1+json.json",
+    "required" : ["contentType"],
+    "properties": {
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
+        "_embedded": { "$ref": "hal-schema.json#/properties/_embedded" },
+        "contentType": {
+            "type" : "string",
+            "format": "mimeType"
+        },
+        "entity": {
+            "type": "array",
+            "description": "List of api resource names.  Only present inside the IWC."
+        },
+        "permissions" : {
+            "type": "object",
+            "additionalProperties":true
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
+}

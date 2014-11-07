@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A description of an intent invocation.",
+    "type": "object",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-handler-v1+json.json",
+    "properties": {
+        "_links": {
+            "properties": {
+                "describes": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "description": "The URL to open a new instance of the intent handler."
+                        },
+                        {"$ref" : "hal-schema.json#/properties/_links"}
+                    ]
+                }
+            },
+            "additionalProperties":  { "$ref" : "hal-schema.json#/properties/_links"}
+        },
+        "_embedded": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
+        },
+        "intent":{
+            "description": "Properties of the intent being invoked.",
+            "type": {
+                "type" : "string",
+                "format": "mimeType",
+                "description": "The content type for this intent."
+            },
+            "action" : {
+                "type": "string",
+                "description": "The action that this intent takes."
+            }
+        },
+        "contentType":{
+            "type":"string",
+            "description": "The content type of the data passed with the invocation."
+        },
+        "entity": {
+            "type": ["string","number","array","object"],
+            "description": "The data to be handled by the handler."
+        },
+        "state" : {
+            "type": "string",
+            "description": "The current state of the invocation."
+        },
+        "status" : {
+            "type": "string",
+            "description": "The status of the invocation."
+        },
+        "handlerChoices" : {
+            "type": "array",
+            "description": "Collection of handlers that can handle this invocation",
+            "item": {"$ref": "vnd.ozp-iwc-intent-handler-v1+json.json"}
+        },
+        "handler":{
+            "type": "object",
+            "description": "Information on the selected handler",
+            "resource": {
+                "type": "string",
+                "description": "The resource name of the selected handler."
+            },
+            "address": {
+                "type": "string",
+                "description": "The address of the selected handler."
+            }
+        },
+        "reply":{
+            "type": "object",
+            "description": "Contents of the handlers reply when handling the invocation.",
+            "contentType": {
+                "type":"string",
+                "description": "The content type of the reply."
+            },
+            "entity":{
+                "type":"object",
+                "description": "The entity of the reply."
+            }
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
+}
