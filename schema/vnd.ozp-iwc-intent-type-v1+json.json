@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "An intent type",
+    "type": "object",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-type-v1+json.json",
+    "required" : ["type","actions"],
+    "properties": {
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
+        "_embedded": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "type": "array",
+                    "description": "Registered definitions for this intent type.  Only present inside the IWC.",
+                    "item": { "$ref": "vnd.ozp-iwc-intent-definition-v1+json.json#" }
+                }
+            },
+            "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
+        },
+        "type": {
+            "type" : "string",
+            "format": "mimeType",
+            "description": "The content type for this intent."
+        },
+        "actions": {
+            "type": "array",
+            "description": "Registered definitions' resource names for this intent type.  Only present inside the IWC."
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
+}

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "",
     "type": "object",
-    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-address-description+json.json",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-multicast-address-v1+json.json",
     "required": ["address","type"],
     "properties": {
         "_links": { "$ref" : "hal-schema.json#/properties/_links"},
@@ -28,6 +28,15 @@
             "type":"string",
             "description": "The participant's origin, if available.",
             "format": "uri"
+        },
+        "members": {
+            "type":"array",
+            "descriptions": "The address of all members in this multicast group.",
+            "item": {
+                "type":"string",
+                "description": "The IWC address of this type",
+                "format": "iwcAddress"
+            }
         }
     },
     "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]

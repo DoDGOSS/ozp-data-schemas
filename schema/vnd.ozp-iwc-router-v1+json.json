@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-router-v1+json.json",
+    "required": ["address"]
+    "properties": {
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
+        "_embedded": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
+        },
+        "address": {
+            "type":"string",
+            "description": "The IWC address of this type",
+            "format": "iwcAddress"
+        },
+        "participants": {
+            "type":"Number",
+            "description": "Number of participants on the router.",
+        }
+    },
+    "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
+}

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "",
     "type": "object",
-    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-api-description+json.json",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-api-v1+json.json",
     "properties": {
         "_links": { "$ref" : "hal-schema.json#/properties/_links"},
         "_embedded": {
