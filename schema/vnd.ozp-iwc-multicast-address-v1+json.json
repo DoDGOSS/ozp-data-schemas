@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "",
+    "description": "A collection of participants in a multicast group",
     "type": "object",
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-multicast-address-v1+json.json",
     "required": ["address","type"],
@@ -19,24 +19,18 @@
             "type":"string",
             "description": "The participant type at this address (e.g. postMessageProxy, leaderGroup, internal)"
         },
-        "address": {
-            "type":"string",
-            "description": "The IWC address of this type",
-            "format": "iwcAddress"
-        },
-        "origin": {
-            "type":"string",
-            "description": "The participant's origin, if available.",
-            "format": "uri"
-        },
         "members": {
             "type":"array",
-            "descriptions": "The address of all members in this multicast group.",
+            "description": "The address of all members in this multicast group.",
             "item": {
                 "type":"string",
                 "description": "The IWC address of this type",
                 "format": "iwcAddress"
             }
+        },
+        "time":{
+            "type": "number",
+            "description": "The time of the last heartbeat pulsed by the multicast group's leader"
         }
     },
     "allOf": [{ "$ref": "ozp-schema-parts.json#definitions/iwc" }]
