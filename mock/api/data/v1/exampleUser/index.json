@@ -21,6 +21,7 @@
                     "self": {"href": "/api/data/v1/exampleUser/someResource"}
                 },
                 "contentType": "application/json",
+                "key": "someResource",
                 "entity": {
                     "some" : "data"
                 }
@@ -30,6 +31,7 @@
                     "self": {"href": "/api/data/v1/exampleUser/pizza"}
                 },
                 "contentType": "text/plain",
+                "key": "pizza",
                 "entity": "pepperoni"
             },
             {
@@ -37,6 +39,7 @@
                     "self": {"href": "/api/data/v1/exampleUser/theme"}
                 },
                 "contentType": "text/plain",
+                "key": "theme",
                 "entity": "dark"
             },
             {
@@ -50,6 +53,7 @@
                     "self": {"href": "/api/data/v1/exampleUser/parent/1234"}
                 },
                 "contentType": "text/plain",
+                "key": "parent/1234",
                 "entity": "I am child 1234 of parent."
             },
             {
@@ -57,6 +61,7 @@
                     "self": {"href": "/api/data/v1/exampleUser/parent/5678"}
                 },
                 "contentType": "text/plain",
+                "key": "parent/5678",
                 "entity": "I am child 5678 of parent."
             }
         ]

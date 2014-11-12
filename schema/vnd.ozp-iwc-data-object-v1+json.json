@@ -15,6 +15,9 @@
             "type": ["object","string"],
             "additionalProperties": true
         },
+        "key": {
+            "type": "string"
+        },
         "permissions" : {
             "type": "object",
             "additionalProperties":true
