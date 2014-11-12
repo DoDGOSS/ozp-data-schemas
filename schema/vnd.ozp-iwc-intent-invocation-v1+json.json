@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A description of an intent invocation.",
     "type": "object",
-    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-handler-v1+json.json",
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-invocation-v1+json.json",
     "properties": {
         "_links": {
             "properties": {
@@ -25,7 +25,7 @@
         },
         "intent":{
             "description": "Properties of the intent being invoked.",
-            "type": {
+            "intentType": {
                 "type" : "string",
                 "format": "mimeType",
                 "description": "The content type for this intent."

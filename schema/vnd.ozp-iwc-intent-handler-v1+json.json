@@ -5,25 +5,8 @@
     "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-iwc-intent-handler-v1+json.json",
     "required" : ["action","type"],
     "properties": {
-        "_links": {
-            "properties": {
-                "describes": {
-                    "allOf": [
-                        {
-                            "type": "object",
-                            "description": "The URL to open a new instance of the intent handler."
-                        },
-                        {"$ref" : "hal-schema.json#/properties/_links"}
-                    ]
-                }
-            },
-            "additionalProperties":  { "$ref" : "hal-schema.json#/properties/_links"}
-        },
-        "_embedded": {
-            "type": "object",
-            "properties": {},
-            "additionalProperties": { "$ref": "hal-schema.json#/properties/_embedded" }
-        },
+        "_links": { "$ref" : "hal-schema.json#/properties/_links"},
+        "_embedded": { "$ref": "hal-schema.json#/properties/_embedded" },
         "type": {
             "type" : "string",
             "format": "mimeType",

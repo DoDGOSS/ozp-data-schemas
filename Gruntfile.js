@@ -38,7 +38,7 @@ module.exports = function(grunt) {
               src: ['mock/api/data/**/*.json','!mock/api/data/v1/exampleUser/index.json']
           },
           intentSchema: {
-              options: makeTv4Options('schema/vnd.ozp-intent-description-v1+json.json'),
+              options: makeTv4Options('schema/vnd.ozp-iwc-intent-handler-v1+json.json'),
               src: 'mock/api/intents/v1/*/*/*/index.json'
           },
           applicationLibrarySchema: {
