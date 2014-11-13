@@ -1,0 +1,24 @@
+{
+    "_links": {
+        "self" : { "href": "/api/profile/v1/exampleUser/intent/text/html" },
+        "curies": [{
+            "name": "ozp",
+            "href": "/api/profile/v1/exampleUser/intent/rels/{rel}",
+            "templated": true
+        }],
+        "ozp:intentActions" : [
+            { "href": "/api/profile/v1/exampleUser/intent/text/html/view"}
+        ]
+    },
+    "_embedded": {
+        "actions": [{
+            "type": "text/html",
+            "action": "view",
+            "icon": "http://example.com/view-text-plain.png",
+            "label": "View as HTML",
+            "_links": {
+                "self" : {"href": "/api/profile/v1/exampleUser/intent/text/html/view"}
+            }
+        }]
+    }
+}
