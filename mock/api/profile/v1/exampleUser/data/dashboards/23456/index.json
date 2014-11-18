@@ -7,7 +7,7 @@
             "href": "web+ozp://data.api/dashboard/23456"
         }
     },
-    "contentType": "text/plain",
+    "contentType": "application/vnd.ozp-data-object-v1+json",
     "key": "dashboard/23456",
     "entity": {
         "name": "dashboards",

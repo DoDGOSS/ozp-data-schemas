@@ -5,6 +5,7 @@
     },
     "type": "text/plain",
     "action": "edit",
+    "contentType": "application/vnd.ozp-iwc-intent-definition-v1+json",
     "icon": "http://example.com/edit-text-plain.png",
     "label": "Edit plain text"
 }

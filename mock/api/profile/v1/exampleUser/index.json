@@ -12,6 +12,7 @@
     "username": "slackbot",
     "id": 1,
     "displayName": "Slackbot",
+    "contentType": "application/vnd.ozp-profile-v1+json",
     "_links": {
         "curies": {
             "href": "http://ozoneplatform.org/docs/rels/{rel}",

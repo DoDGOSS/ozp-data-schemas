@@ -1,13 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "/api/profile/v1/exampleUser/data/dashboard/12345"
+            "href": "/api/profile/v1/exampleUser/toolbars/23456"
         },
         "ozp:iwcSelf": {
             "href": "web+ozp://data.api/dashboard/12345"
         }
     },
-    "contentType": "text/plain",
+    "contentType": "application/vnd.ozp-data-object-v1+json",
     "key": "dashboard/12345",
     "entity": {
         "name": "dashboards",
