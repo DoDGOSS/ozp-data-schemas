@@ -1,0 +1,21 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-image-ref-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["contentType", "id"],
+    "additionalProperties": true,
+    "description": "Metadata about an image stored on the server",
+    "properties": {
+        "id": {
+            "description": "An opaque identifier for this image",
+            "type": ["string", "integer"]
+        },
+        "contentType": {
+            "description": "The Internet Media Type of the image",
+            "type": "string"
+        }
+    },
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" }
+    ]
+}
