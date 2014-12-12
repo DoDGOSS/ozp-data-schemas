@@ -1,19 +1,34 @@
 {
+    "total": 2,
+    "_links": {
+        "item": [{
+            "href": "https://localhost:8443/marketplace/api/agency/1"
+        }, {
+            "href": "https://localhost:8443/marketplace/api/agency/2"
+        }],
+        "self": {
+            "href": "https://localhost:8443/marketplace/api/agency"
+        }
+    },
     "_embedded": {
-        "item": {
+        "item": [{
+            "shortName": "TO",
+            "title": "Test Organization",
+            "id": 1,
             "_links": {
                 "self": {
                     "href": "https://localhost:8443/marketplace/api/agency/1"
                 }
-            },
-            "icon": "https://localhost/",
-            "id": 1,
-            "title": "Agency 1"
-        }
-    },
-    "_links": {
-        "self": {
-            "href": "https://localhost:8443/marketplace/api/profile/1/stewarded-organizations"
-        }
+            }
+        }, {
+            "shortName": "TO2",
+            "title": "Test 2 Organization",
+            "id": 2,
+            "_links": {
+                "self": {
+                    "href": "https://localhost:8443/marketplace/api/agency/2"
+                }
+            }
+        }]
     }
 }
