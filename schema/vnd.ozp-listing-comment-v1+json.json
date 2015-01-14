@@ -13,7 +13,7 @@
         },
         "id": {
             "type": ["string", "integer"],
-            "description": "An opaque, unique identifier for the Listing"
+            "description": "An opaque, unique identifier for the ItemComment"
         },
         "_links": {
             "properties": {
