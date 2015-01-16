@@ -6,7 +6,7 @@
                     "href": "https://localhost:8443/marketplace/api/agency/1"
                 }
             },
-            "icon": "https://localhost/",
+            "shortName": "A1",
             "id": 1,
             "title": "Agency 1"
         }

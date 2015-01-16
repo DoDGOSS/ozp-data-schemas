@@ -80,6 +80,22 @@ module.exports = function(grunt) {
           listingActivitiesSchema: {
               options:makeTv4Options('schema/vnd.ozp-listing-activities-v1+json.json'),
               src: 'mock/api/listing/**/vnd.ozp-listing-activities-v1+json.json'
+          },
+          imageSchema: {
+              options:makeTv4Options('schema/vnd.ozp-image-ref-v1+json.json'),
+              src: 'mock/api/image/**/vnd.ozp-image-ref-v1+json.json'
+          },
+          listingSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listing-v1+json.json'),
+              src: 'mock/api/listing/**/vnd.ozp-listing-v1+json.json'
+          },
+          listingsSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listings-v1+json.json'),
+              src: 'mock/api/listing/**/vnd.ozp-listings-v1+json.json'
+          },
+          filteredListingsSchema: {
+              options:makeTv4Options('schema/vnd.ozp-listings-filtered-v1+json.json'),
+              src: 'mock/api/listing/**/vnd.ozp-listings-filtered-v1+json.json'
           }
       }
     };

@@ -1,0 +1,56 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-listings-filtered-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "required": ["counts","_embedded", "_links"],
+    "allOf": [
+        { "$ref": "vnd.ozp-listings-v1+json.json" }
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "counts": {
+            "type": "object",
+            "required": [
+                "APPROVED",
+                "APPROVED_ORG",
+                "IN_PROGRESS",
+                "PENDING",
+                "REJECTED",
+                "enabled",
+                "organizations"
+            ],
+            "properties": {
+                "APPROVED": {
+                    "description": "The total (unpaged) number of Approved listings matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "APPROVED_ORG": {
+                    "description": "The total (unpaged) number of Approved-Org listings matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "IN_PROGRESS": {
+                    "description": "The total (unpaged) number of Draft listings matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "PENDING": {
+                    "description": "The total (unpaged) number of listings pending approval matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "REJECTED": {
+                    "description": "The total (unpaged) number of rejected listings matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "enabled": {
+                    "description": "The total (unpaged) number of enabled listings matching the criteria which produced this collection of listings",
+                    "type": "integer"
+                },
+                "organizations": {
+                    "description": "An object holding the number of listings within each organization which match the criteria which produced this collection of listings.  Each property on this object is an organization id, and each property value is the number of matching listings which are in that organization",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

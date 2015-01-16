@@ -1,0 +1,299 @@
+{
+    "id": "http://ozoneplatform.org/jsonschema/vnd.ozp-listing-v1+json.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["title", "type"],
+    "description": "A listing stored within the OZONE store",
+    "properties": {
+        "editedDate": {
+            "description": "The date and time at which this listing was last modified.  This property cannot be modified externally",
+            "type": "string",
+            "format": "date-time"
+        },
+        "approvedDate": {
+            "description": "The date and time at which this listing was approved by the Store Steward.  This property cannot be modified externally",
+            "type": "string",
+            "format": "date-time"
+        },
+        "launchUrl": {
+            "description": "The URI of the application represented by this listing.  Required for non-draft listings",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "versionName": {
+            "description": "The user-specified version of the application represented by this listing",
+            "type": ["string", "null"]
+        },
+        "uuid": {
+            "description": "An opaque identifier for the listing that is meant to be truly globally unique.  This property cannot be modified externally",
+            "type": "string"
+        },
+        "smallIconId": {
+            "description": "The id of the image to be used as the small (16x16) icon for this listing.  This id must identify an image present on the server.  Required for non-draft listings",
+            "type": ["string", "null"]
+        },
+        "largeIconId": {
+            "description": "The id of the image to be used as the large (32x32) icon for this listing.  This id must identify an image present on the server.  Required for non-draft listings",
+            "type": ["string", "null"]
+        },
+        "bannerIconId": {
+            "description": "The id of the image to be used as the banner (220x137) icon for this listing.  This id must identify an image present on the server.  Required for non-draft listings",
+            "type": ["string", "null"]
+        },
+        "featuredBannerIconId": {
+            "description": "The id of the image to be used as the small (600x376) icon for this listing.  This id must identify an image present on the server.  Required for non-draft listings",
+            "type": ["string", "null"]
+        },
+        "whatIsNew": {
+            "description": "A brief description of the newest features and changes in the application represented by this listing",
+            "type": ["string", "null"],
+            "maxLength": 250
+        },
+        "descriptionShort": {
+            "description": "A brief description of the listing.  Required for non-draft listings",
+            "type": ["string", "null"],
+            "maxLength": 150
+        },
+        "approvalStatus": {
+            "description": "The phase of the listing approval process in which this listing currently sits",
+            "type": "string",
+            "enum": ["IN_PROGRESS", "PENDING", "APPROVED_ORG", "APPROVED", "REJECTED"]
+        },
+        "isEnabled": {
+            "description": "A boolean value for whether or not this listing is enabled.  Disabled listing cannot be seen by general users even once they are Approved",
+            "type": "boolean"
+        },
+        "isFeatured": {
+            "description": "A boolean value for whether or not this listing is currently featured",
+            "type": "boolean"
+        },
+        "totalComments": {
+            "description": "The number of reviews of this listing that have been posted. This value cannot be directly modified",
+            "type": "integer"
+        },
+        "screenshots": {
+            "description": "A collection of screenshot objects representing screenshots of the application represented by this listing.  Required for non-draft listings",
+            "type": "array",
+            "items": {
+                "description": "A collection of two images that should be large and small (dimensionally) but which both portray the same image of the application in use",
+                "type": "object",
+                "required": ["smallImageId", "largeImageId"],
+                "properties": {
+                    "smallImageId": {
+                        "description": "The unique id of the small image for this screenshot",
+                        "type": ["string", "null"]
+                    },
+                    "largeImageId": {
+                        "description": "The unique id of the large image for this screenshot",
+                        "type": ["string", "null"]
+                    },
+                    "smallImageUrl": {
+                        "description": "The URI by which the small image for this screenshot can be retrieved",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "largeImageUrl": {
+                        "description": "The URI by which the large image for this screenshot can be retrieved",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "contacts": {
+            "description": "A collection of contact objects representing human POC's regarding this listing and the associated application.  Required for non-draft listings",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["name", "type", "email"],
+                "properties": {
+                    "name": {
+                        "description": "The name of the person or group who this contact describes",
+                        "type": "string",
+                        "maxLength": 100
+                    },
+                    "email": {
+                        "description": "The email address for this contact",
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "securePhone": {
+                        "description": "A secure phone number to the contact",
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "unsecurePhone": {
+                        "description": "A non-secure phone number to the contact",
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "type": {
+                        "description": "The title of the contact type that this contact is a member of",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "agency": {
+            "description": "The title of the organization to which this listing belongs.  This value must match the title of an organization in the system.  Required for non-draft listings",
+            "type": ["string", "null"]
+        },
+        "categories": {
+            "description": "A collection of titles of categories to which this listing belongs.  Each title must match with a category defined in the system.  Required for non-draft listings",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "owners": {
+            "description": "A collection of objects describing the owners of this listing",
+            "type": "array",
+            "items": {
+                "required": ["username"],
+                "properties": {
+                    "displayName": {
+                        "description": "The human-readable name of this user",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "The unique username of this user",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "docUrls": {
+            "description": "A collection of objects describing web-accessible documentation for the application referenced by this listing.  Required for non-draft listings",
+            "type": "array",
+            "items": {
+                "required": ["url", "name"],
+                "properties": {
+                    "url": {
+                        "description": "The URI that can be used to access this documentation",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "name": {
+                        "description": "The name of this piece of documentation",
+                        "type": "string",
+                        "maxLength": 255
+                    }
+                }
+            }
+        },
+        "intents": {
+            "description": "A collection of OZONE intent specifications which state the intents that the application represented by this listing is able to receive",
+            "type": "array",
+            "items": {
+                "description": "A string of the composed of an Internet Media Type followed by a forward slash followed by an intent action name.  Example: 'application/json/edit'",
+                "type": "string"
+            }
+        },
+        "imageSmallUrl": {
+            "description": "The URI by which the image identified by smallIconId can be retrieved.  This property is read-only",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "imageMediumUrl": {
+            "description": "The URI by which the image identified by largeIconId can be retrieved.  This property is read-only",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "imageLargeUrl": {
+            "description": "The URI by which the image identified by bannerIconId can be retrieved.  This property is read-only",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "imageXlargeUrl": {
+            "description": "The URI by which the image identified by featuredBannerIconId can be retrieved.  This property is read-only",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "agencyShort": {
+            "description": "The short/abbreviated name of the organization to which this listing belongs.  This property is read-only",
+            "type": ["string", "null"]
+        },
+        "currentRejection": {
+            "description": "This property is only non-null if the listing is currently rejected.  It includes the reason why it was rejected. This property is read-only",
+            "type": ["object", "null"],
+            "properties": {
+                "description": {
+                    "description": "The admin-specified reason why the listing was rejected",
+                    "type": "string"
+                }
+            }
+        },
+        "required": {
+            "description": "Id reference objects identifying other listings that this listing depends on for correct operation",
+            "type": "array",
+            "items": { "$ref": "vnd.ozp-id-ref-v1+json.json" }
+        },
+        "width": {
+            "description": "The user-specified recommended width for the viewport in which this application should display",
+            "type": ["integer", "null"]
+        },
+        "height": {
+            "description": "The user-specified recommended height for the viewport in which this application should display",
+            "type": ["integer", "null"]
+        },
+        "tags": {
+            "description": "A collection of user-specified keywords that are relevant to the listing",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "maxLength": 16
+            }
+        },
+        "description": {
+            "description": "A descrption of the application referenced by this listing.  Required for non-draft listings",
+            "type": ["string", "null"],
+            "maxLength": 4000
+        },
+        "requirements": {
+            "description": "A textual description of the general requirements for running the listings.  Examples: supported browsers and operating systems. Required for non-draft listings",
+            "type": ["string", "null"],
+            "maxLength": 1000
+        },
+        "singleton": {
+            "description": "A boolean indicating whether or not this application is only meant to have one running instance at a time",
+            "type": "boolean"
+        },
+        "title": {
+            "description": "The title of this listing",
+            "type": "string",
+            "maxLength": 255
+        },
+        "id": {
+            "description": "The unique identifier for this listing",
+            "type": "integer"
+        },
+        "type": {
+            "description": "The title of the Type which this listing is a member of.  Must match the title of an existing type within the system",
+            "type": "string"
+        },
+        "_links": {
+            "additionalProperties": true,
+            "properties": {
+                "ozp:activity": {
+                    "description": "A link to the activities (changelog) for this listing",
+                    "additionalProperties": true
+                },
+                "ozp:required": {
+                    "description": "Links to the listings that this listing requires",
+                    "additionalProperties": true
+                },
+                "ozp:required-by": {
+                    "description": "Links to the listings that require this listing",
+                    "additionalProperties": true
+                },
+                "ozp:review": {
+                    "description": "Links to the reviews/comments for this listing",
+                    "additionalProperties": true
+                }
+            }
+        }
+    },
+    "allOf": [
+        { "$ref": "ozp-schema-parts.json#/definitions/selfReferencing" }
+    ]
+}
