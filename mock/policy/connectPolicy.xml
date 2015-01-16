@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Policy PolicyId="urn:ozp:iwc:xacml:policies:connect1"
+<Policy PolicyId="urn:ozp:iwc:xacml:policy:connect1"
         RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides"
         Version="1.0">
     <Description>
         Policy for Connection Allowances (testing)
     </Description>
     <Target/>
-    <Rule Effect="Permit" RuleId="urn:ozp:iwc:xacml:rules:connect1">
+    <Rule Effect="Permit" RuleId="urn:ozp:iwc:xacml:rule:connect1">
         <Description>
             The following domains are white-listed to connect to the IWC bus.
         </Description>

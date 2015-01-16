@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Policy PolicyId="urn:ozp:iwc:policy:testPolicy"
+<Policy PolicyId="urn:ozp:iwc:xacml:policy:testPolicy"
         RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides"
         Version="1.0">
     <Description>
         Fake Policy for unit testing.
     </Description>
     <Target/>
-    <Rule Effect="Permit" RuleId="urn:ozp:iwc:rule:testRule">
+    <Rule Effect="Permit" RuleId="urn:ozp:iwc:xacml:rule:testRule">
         <Description>
             Julius Hibbert can read or write Bart Simpson's medical record.
         </Description>
