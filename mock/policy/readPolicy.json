@@ -1,0 +1,21 @@
+{
+  "policyId": "urn:ozp:iwc:xacml:policy:read1",
+  "ruleCombiningAlgId": "urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides",
+  "version": "1.0",
+  "description": "Policy for reading (testing)",
+  "rule": [
+    {
+      "ruleId": "urn:ozp:iwc:xacml:rule:read",
+      "description": "The following address can read if it has all of the security requirements.",
+      "category": {
+        "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject":"ozp:iwc:address",
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:resource":"ozp:iwc:permissions",
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:action": {
+          "ozp:iwc:action": {
+            "attributeValue": ["read", "write"]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "policyId": "urn:ozp:iwc:xacml:policy:connect1",
+  "policyId": "connectPolicy.json",
   "ruleCombiningAlgId": "urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides",
   "version": "1.0",
   "description": "Policy for Connection Allowances (testing)",
@@ -8,33 +8,33 @@
       "ruleId": "urn:ozp:iwc:xacml:rule:connect1",
       "description": "The following domains are white-listed to connect to the IWC bus.",
       "category": {
-        "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject":{
-          "attributeDesignator": {
-            "attributeId" : "urn:oasis:names:tc:xacml:1.0:subject:subject-id",
-            "dataType" : "http://www.w3.org/2001/XMLSchema#anyURI",
-            "mustBePresent": false
-          },
-          "attributeValue" : [
-            "http://localhost:13000",
-            "http://localhost:15001",
-            "http://ozone-development.github.io"
-          ]
+        "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject": {
+          "ozp:iwc:origin": {
+            "attributeValue": [
+              "http://localhost:13000",
+              "http://localhost:14000",
+              "http://localhost:14001",
+              "http://localhost:15000",
+              "http://localhost:15001",
+              "http://localhost:15002",
+              "http://localhost:15003",
+              "http://localhost:15004",
+              "http://localhost:15005",
+              "http://localhost:15006",
+              "http://localhost:15007",
+              "http://ozone-development.github.io"
+            ]
+          }
         },
-        "urn:oasis:names:tc:xacml:3.0:attribute-category:resource":{
-          "attributeDesignator": {
-            "attributeId" : "urn:oasis:names:tc:xacml:1.0:resource:resource-id",
-            "dataType" : "http://www.w3.org/2001/XMLSchema#string",
-            "mustBePresent": false
-          },
-          "attributeValue" : ["$bus.multicast"]
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:resource": {
+          "ozp:iwc:bus": {
+            "attributeValue": ["$bus.multicast"]
+          }
         },
-        "urn:oasis:names:tc:xacml:3.0:attribute-category:action":{
-          "attributeDesignator": {
-            "attributeId" : "urn:oasis:names:tc:xacml:1.0:action:action-id",
-            "dataType" : "http://www.w3.org/2001/XMLSchema#string",
-            "mustBePresent": false
-          },
-          "attributeValue" : ["connect"]
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:action": {
+          "ozp:iwc:action": {
+            "attributeValue": ["connect"]
+          }
         }
       }
     }

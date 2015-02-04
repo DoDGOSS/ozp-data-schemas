@@ -1,0 +1,21 @@
+{
+  "policyId": "urn:ozp:iwc:xacml:policy:connect1",
+  "ruleCombiningAlgId": "urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides",
+  "version": "1.0",
+  "description": "Policy for SendingAs (testing)",
+  "rule": [
+    {
+      "ruleId": "urn:ozp:iwc:xacml:rule:receiveAs",
+      "description": "The following domains are white-listed to connect to the IWC bus.",
+      "category": {
+        "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject":"ozp:iwc:address",
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:resource":"ozp:iwc:receiveAs",
+        "urn:oasis:names:tc:xacml:3.0:attribute-category:action":{
+          "ozp:iwc:action": {
+            "attributeValue": ["receiveAs"]
+          }
+        }
+      }
+    }
+  ]
+}
