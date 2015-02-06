@@ -11,9 +11,7 @@
         "urn:oasis:names:tc:xacml:1.0:subject-category:access-subject":"ozp:iwc:address",
         "urn:oasis:names:tc:xacml:3.0:attribute-category:resource":"ozp:iwc:receiveAs",
         "urn:oasis:names:tc:xacml:3.0:attribute-category:action":{
-          "ozp:iwc:action": {
-            "attributeValue": ["receiveAs"]
-          }
+          "ozp:iwc:action":  ["receiveAs"]
         }
       }
     }
