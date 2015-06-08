@@ -20,32 +20,32 @@
                 "_links": {
                     "self": {"href": "/api/profile/v1/exampleUser/data/someResource"}
                 },
-                "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "someResource",
                 "entity": {
                     "entity":{
                         "some" : "data"
-                    }
+                    },
+                    "contentType": "application/vnd.ozp-data-object-v1+json",
+                    "key": "someResource"
                 }
             },
             {
                 "_links": {
                     "self": {"href": "/api/profile/v1/exampleUser/data/pizza"}
                 },
-                "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "pizza",
                 "entity": {
-                    "entity": "pepperoni"
+                    "entity": "pepperoni",
+                    "contentType": "application/vnd.ozp-data-object-v1+json",
+                    "key": "pizza"
                 }
             },
             {
                 "_links": {
                     "self": {"href": "/api/profile/v1/exampleUser/data/theme"}
                 },
-                "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "theme",
                 "entity": {
-                    "entity": "dark"
+                    "entity": "dark",
+                    "contentType": "application/vnd.ozp-data-object-v1+json",
+                    "key": "theme"
                 }
             },
             {
@@ -53,29 +53,29 @@
                     "self": {"href": "/api/profile/v1/exampleUser/data/parent"}
                 },
                 "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "parent",
                 "entity": {
-                    "children": ["/parent/1234", "/parent/5678"]
+                    "children": ["/parent/1234", "/parent/5678"],
+                    "key": "parent"
                 }
             },
             {
                 "_links": {
                     "self": {"href": "/api/profile/v1/exampleUser/data/parent/1234"}
                 },
-                "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "parent/1234",
                 "entity": {
-                    "entity": "I am child 1234 of parent."
+                    "entity": "I am child 1234 of parent.",
+                    "contentType": "application/vnd.ozp-data-object-v1+json",
+                    "key": "parent/1234"
                 }
             },
             {
                 "_links": {
                     "self": {"href": "/api/profile/v1/exampleUser/data/parent/5678"}
                 },
-                "contentType": "application/vnd.ozp-data-object-v1+json",
-                "key": "parent/5678",
                 "entity": {
-                    "entity": "I am child 5678 of parent."
+                    "entity": "I am child 5678 of parent.",
+                    "contentType": "application/vnd.ozp-data-object-v1+json",
+                    "key": "parent/5678"
                 }
             }
         ]

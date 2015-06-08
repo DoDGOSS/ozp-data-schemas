@@ -7,8 +7,6 @@
             "href": "web+ozp://data.api/dashboard/12345"
         }
     },
-    "contentType": "application/vnd.ozp-data-object-v1+json",
-    "key": "dashboard/12345",
     "entity": {
         "entity": {
             "name": "dashboards",
@@ -224,6 +222,8 @@
                     ]
                 }
             ]
-        }
+        },
+        "contentType": "application/vnd.ozp-data-object-v1+json",
+        "key": "dashboard/12345"
     }
 }
