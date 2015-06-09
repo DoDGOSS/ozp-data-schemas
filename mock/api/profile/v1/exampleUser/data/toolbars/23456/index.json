@@ -3,8 +3,6 @@
         "self": {"href": "/api/profile/v1/exampleUser/toolbars/23456"},
         "ozp:iwcSelf": {"href": "web+ozp://data.api/toolbars/23456"}
     },
-    "contentType": "application/vnd.ozp-data-object-v1+json",
-    "key": "toolbars/23456",
     "entity":{
         "entity": {
             "toolbars": [
@@ -54,6 +52,8 @@
                     "location": "bottom"
                 }
             ]
-        }
+        },
+        "contentType": "application/vnd.ozp-data-object-v1+json",
+        "key": "toolbars/23456"
     }
 }
